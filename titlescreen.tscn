@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fonts/OpenSans-title.tres" type="DynamicFont" id=1]
+[ext_resource path="res://titlescreen.gd" type="Script" id=2]
+
+[node name="titlescreen" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 100
+custom_constants/margin_top = 20
+custom_constants/margin_left = 100
+custom_constants/margin_bottom = 20
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 100.0
+margin_top = 20.0
+margin_right = 1180.0
+margin_bottom = 700.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 1080.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 0, 120 )
+custom_fonts/font = ExtResource( 1 )
+text = "Title Screen"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 124.0
+margin_right = 1080.0
+margin_bottom = 680.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_right = 240.0
+margin_bottom = 556.0
+rect_min_size = Vector2( 240, 0 )
+custom_constants/separation = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 240.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 0, 72 )
+
+[node name="NewGameButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 82.0
+margin_right = 200.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 200, 50 )
+size_flags_horizontal = 0
+text = "New Game"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 142.0
+margin_right = 200.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 200, 50 )
+size_flags_horizontal = 0
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 202.0
+margin_right = 200.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 200, 50 )
+size_flags_horizontal = 0
+text = "Quit"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 262.0
+margin_right = 240.0
+margin_bottom = 556.0
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 244.0
+margin_right = 1080.0
+margin_bottom = 556.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/VBoxContainer/NewGameButton" to="." method="_on_NewGameButton_button_down"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/NewGameButton" to="." method="_on_NewGameButton_pressed"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_button_down"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_button_down"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]

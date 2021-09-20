@@ -7,6 +7,14 @@ func _ready():
 #func _process(delta):
 #    pass
 
+func _on_NewGameButton_button_down():
+    switcher.playClick()
+    
+func _on_NewGameButton_pressed():
+    var ptest_instance = load("res://p_test.tscn")
+    var ptest = ptest_instance.instance()
+    add_child(ptest)
+    
 func _on_OptionsButton_button_down():
     switcher.playClick()
     
@@ -19,11 +27,7 @@ func _on_QuitButton_button_down():
 func _on_QuitButton_pressed():
     switcher.switchQuit()
 
-func _on_NewGameButton_button_down():
-    switcher.playClick()
-    
-func _on_NewGameButton_pressed():
-    pass # Replace with function body.
+
 
 
 

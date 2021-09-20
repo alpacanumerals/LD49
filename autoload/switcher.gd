@@ -1,8 +1,8 @@
 extends Node
 
 var current_scene
-var ui_click = preload("res://autoload/uiclick.tscn")
-var uiClick
+var click_sound = preload("res://autoload/uiclick.tscn")
+var ui_click
 
 func _ready():
     #An autoloaded node is the elder sibling of whatever scene is active, so they share a root.
@@ -10,8 +10,8 @@ func _ready():
     #A count of the children is always 1 more than the 0-indexed id of the active scene.
     #(The one with everythnig in it)
     current_scene = root.get_child(root.get_child_count() - 1)
-    uiClick = ui_click.instance()
-    add_child(uiClick)
+    ui_click = click_sound.instance()
+    add_child(ui_click)
 
 #Activates with a button press somewhere.
 func switchScene(path):
@@ -23,5 +23,5 @@ func switchQuit():
     get_tree().quit()
     
 func playClick():
-    uiClick.play()
+    ui_click.play()
     pass

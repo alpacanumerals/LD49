@@ -22,7 +22,7 @@ func loadJSONs():
 func filePath(file):
     return "res://loader/"+file+".txt"
     
-    
+#RANDOM
 func randomFrom(array):
     return array[randi() % array.size()]
 
@@ -31,7 +31,7 @@ func percentChance(percent):
         return true
     return false
 
-
+#DICE
 func d100(dice:int = 1):
     var result:int = 0
     for i in range(dice):

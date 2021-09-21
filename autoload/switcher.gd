@@ -1,6 +1,7 @@
 extends Node
 
 var current_scene
+
 var click_sound = preload("res://autoload/uiclick.tscn")
 var ui_click
 

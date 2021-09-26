@@ -5,17 +5,25 @@
 [ext_resource path="res://fonts/OpenSans-name.tres" type="DynamicFont" id=3]
 
 [node name="Dialogue" type="Control"]
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 520.0
+margin_top = -200.0
+margin_bottom = -200.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Panel" type="Panel" parent="."]
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }

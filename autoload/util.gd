@@ -43,3 +43,9 @@ func d6(dice:int = 1):
     for i in range(dice):
         result = result + randi()%6+1
     return result
+
+#Dialogue
+func dialogue():
+    var dialogue_box_load = load("res://dialoguebox.tscn") #Dialogue test
+    var dialogue_box = dialogue_box_load.instance()
+    get_viewport().add_child(dialogue_box)

@@ -6,6 +6,7 @@ var click_sound = preload("res://autoload/uiclick.tscn")
 var ui_click
 
 func _ready():
+    pause_mode = Node.PAUSE_MODE_PROCESS
     #An autoloaded node is the elder sibling of whatever scene is active, so they share a root.
     var root = get_tree().get_root()
     #A count of the children is always 1 more than the 0-indexed id of the active scene.

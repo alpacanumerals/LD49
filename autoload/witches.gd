@@ -3,13 +3,12 @@ extends Node
 var witch_array = []
 var witch_index = 0
 
-#namae, stars, facefile, ATK, DEF, ability index (0 for now)
+#name, stars, facefile, ATK, DEF, ability index (0 for now)
 #index 0, 1, 2 always Gertrude, Manako and Yuli
 
 func _ready():
     pause_mode = Node.PAUSE_MODE_PROCESS
     pass # Replace with function body.
-
 
 func init_witches():
     var roll = util.d100()
@@ -59,8 +58,6 @@ func witch_carding():
     get_viewport().add_child(witch_card)
 
 func witch_summon(tsun, yan, dere):
-    
-    
     var summoning_load = load("res://summon.tscn") #Dialogue test
     var summoning = summoning_load.instance()
     get_viewport().add_child(summoning)    

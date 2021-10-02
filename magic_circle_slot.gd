@@ -1,6 +1,7 @@
 extends Area2D
 
 export var snappable: bool = true
+export var slot_number: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,3 +12,6 @@ func get_snap_target():
 
 func get_snap_location():
     return self.get_global_position()
+
+func update_magic(node):
+    magic.update_slot(slot_number, node)

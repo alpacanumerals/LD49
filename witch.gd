@@ -36,7 +36,11 @@ func _put_down():
     dragging = false
     if snap_target != home:
         get_parent().remove_child(self)
+        if home.has_method("update_magic"):
+            home.update_magic(self)
         snap_target.add_child(self)
+        if snap_target.has_method("update_magic"):
+            snap_target.update_magic(self)
         if snap_target.has_method("get_snap_location"):
             var snap_loc = snap_target.get_snap_location()
             self.set_global_position(snap_loc)

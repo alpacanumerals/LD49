@@ -47,5 +47,9 @@ func update_stability():
         print("boom!")
         stability = 0
 
+func update_slot(slot_number, witch):
+    print(slot_number)
+    pass
+    
 func set_depth(value):
     depth = value

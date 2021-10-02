@@ -142,6 +142,7 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
+slot_number = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/MagicCircleSlot2"]
 position = Vector2( 0.668335, -0.668304 )
@@ -158,6 +159,7 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
+slot_number = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/MagicCircleSlot3"]
 position = Vector2( 0.668335, -0.668304 )
@@ -174,6 +176,7 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
+slot_number = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/MagicCircleSlot4"]
 position = Vector2( 0.668335, -0.668304 )

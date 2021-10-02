@@ -1,9 +1,11 @@
 extends Node
 
 var witch_array = []
-var witch_index:int=0
-#[namae, stars, facefile, ATK, DEF, ability index (0 for now)]
+var witch_index = 2
+
+#namae, stars, facefile, ATK, DEF, ability index (0 for now)
 #index 0, 1, 2 always Gertrude, Manako and Yuli
+
 func _ready():
     pause_mode = Node.PAUSE_MODE_PROCESS
     pass # Replace with function body.

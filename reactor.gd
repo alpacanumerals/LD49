@@ -1,7 +1,5 @@
 extends ColorRect
 
-var witches = []
-
 var yan:int = 100
 var tsun:int = 100
 var dere:int = 100

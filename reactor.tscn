@@ -105,14 +105,14 @@ size_flags_vertical = 3
 
 [node name="MagicCircleArea" type="CenterContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer"]
 margin_right = 776.0
-margin_bottom = 520.0
+margin_bottom = 480.0
 rect_min_size = Vector2( 0, 480 )
 
 [node name="CircleSprite" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea"]
 margin_left = 208.0
-margin_top = 80.0
+margin_top = 60.0
 margin_right = 568.0
-margin_bottom = 440.0
+margin_bottom = 420.0
 texture = ExtResource( 5 )
 
 [node name="MagicCircleSlot" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
@@ -185,34 +185,58 @@ margin_bottom = 700.0
 size_flags_vertical = 3
 
 [node name="PowerLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea"]
+margin_top = 101.0
+margin_right = 776.0
+margin_bottom = 115.0
 text = "Power: 100"
 script = ExtResource( 7 )
-statname = "Power"
+stat_name = "power"
+stat_label = "Power"
 
 [node name="ShieldLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea"]
+margin_top = 101.0
+margin_right = 776.0
+margin_bottom = 115.0
 text = "Power: 100"
 script = ExtResource( 7 )
-statname = "Shielding"
+stat_name = "shielding"
+stat_label = "Shielding"
 
 [node name="StabLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea"]
+margin_top = 101.0
+margin_right = 776.0
+margin_bottom = 115.0
 text = "Power: 100"
 script = ExtResource( 7 )
-statname = "Stability"
+stat_name = "stability"
+stat_label = "Stability"
 
 [node name="TsunLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea"]
+margin_top = 101.0
+margin_right = 776.0
+margin_bottom = 115.0
 text = "Power: 100"
 script = ExtResource( 7 )
-statname = "Tsun"
+stat_name = "tsun"
+stat_label = "Tsun"
 
 [node name="YanLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea"]
+margin_top = 101.0
+margin_right = 776.0
+margin_bottom = 115.0
 text = "Power: 100"
 script = ExtResource( 7 )
-statname = "Yan"
+stat_name = "yan"
+stat_label = "Yan"
 
 [node name="DereLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea"]
+margin_top = 101.0
+margin_right = 776.0
+margin_bottom = 115.0
 text = "Power: 100"
 script = ExtResource( 7 )
-statname = "Dere"
+stat_name = "dere"
+stat_label = "Dere"
 
 [node name="ListPanel" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 992.0

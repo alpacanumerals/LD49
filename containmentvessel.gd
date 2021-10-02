@@ -30,7 +30,7 @@ func _process(delta):
     position += velocity * delta
     ###TEMPORARY TESTING CODE
         
-    depth = global_position.y
+    magic.set_depth(global_position.y)
     
     update() #This is needed for the cable to draw properly.
     pass

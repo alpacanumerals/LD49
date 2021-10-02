@@ -18,6 +18,7 @@ func initialise(witch_index):
     var fetched_witch = witches.witch_array[witch_index]
     var face = load("res://assets_faces/"+fetched_witch[2]+".png")
     $Button.icon = face
+    $Button.text = fetched_witch[0]
 
 func _process(delta):
     if dragging:

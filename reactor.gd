@@ -24,6 +24,7 @@ func _ready():
     var list_button_load = load("res://witch.tscn") #Dialogue test
     var list_button = list_button_load.instance()
     get_node("MarginContainer/VBoxContainer/HBoxContainer/ListPanel/WitchList").add_child(list_button)
+    
     vessel = get_node("MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel")
     power_label = get_node("MarginContainer/VBoxContainer/HBoxContainer/MainScreen/PowerLabel")
     shield_label = get_node("MarginContainer/VBoxContainer/HBoxContainer/MainScreen/ShieldLabel")

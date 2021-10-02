@@ -10,6 +10,8 @@ signal put_down
 func _ready():
     connect("pick_up", self, "_pick_up")
     connect("put_down", self, "_put_down")
+    var face = load("res://assets_faces/manako.png")
+    $Button.icon = face
 
 func _process(delta):
     if dragging:

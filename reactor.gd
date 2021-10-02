@@ -1,9 +1,10 @@
 extends ColorRect
 
+var witches = []
 
 var yan:int = 100
 var tsun:int = 100
-
+var dere:int = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

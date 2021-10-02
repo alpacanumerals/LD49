@@ -3,9 +3,9 @@
 [ext_resource path="res://fonts/OpenSans-Regular.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 24
+size = 17
 outline_size = 2
-outline_color = Color( 0, 0, 0.705882, 1 )
+outline_color = Color( 0.12549, 0.580392, 0, 1 )
 use_filter = true
-extra_spacing_char = 2
+extra_spacing_char = 1
 font_data = ExtResource( 1 )

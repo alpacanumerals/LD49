@@ -1,7 +1,7 @@
 extends ColorRect
 
-var yan:int = 100
 var tsun:int = 100
+var yan:int = 100
 var dere:int = 100
 
 # Called when the node enters the scene tree for the first time.
@@ -24,7 +24,7 @@ func _on_Button_pressed():
     ###TESTING CODE FOR THE WITCH CARD###
     
     ###TESTING CODE FOR SUMMONING###
-#    witches.witch_summon = 
+    witches.witch_summon(tsun, yan, dere)
     ###TESTING CODE FOR SUMMONING###
     
     pass # Replace with function body.

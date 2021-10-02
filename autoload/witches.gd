@@ -2,7 +2,6 @@ extends Node
 
 var witch_array = []
 var witch_index = 0
-var witch_summon = []
 
 #namae, stars, facefile, ATK, DEF, ability index (0 for now)
 #index 0, 1, 2 always Gertrude, Manako and Yuli
@@ -58,3 +57,11 @@ func witch_carding():
     var witch_card_load = load("res://witchcard.tscn") #Dialogue test
     var witch_card = witch_card_load.instance()
     get_viewport().add_child(witch_card)
+
+func witch_summon(tsun, yan, dere):
+    
+    
+    var summoning_load = load("res://summon.tscn") #Dialogue test
+    var summoning = summoning_load.instance()
+    get_viewport().add_child(summoning)    
+    pass

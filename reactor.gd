@@ -36,21 +36,24 @@ func _physics_process(delta):
     reactor_tick_counter += delta
     if reactor_tick_counter > reactor_tick_size:
         reactor_tick_counter = 0.0
-        power = vessel.depth/4
-        var excess = power - shielding
-        var stab_d = 0
-        if excess > 0:
-            stab_d = -excess
-        else:
-            stab_d = 1
-        stability += stab_d
-        if stability > 100:
-            stability = 100
-        elif stability < 0:
-            print("boom!")
-            stability = 0
+        update_stability()
     update_labels()
 
+func update_stability():        
+    power = vessel.depth/4
+    var excess = power - shielding
+    var stab_d = 0
+    if excess > 0:
+        stab_d = -excess
+    else:
+        stab_d = 1
+    stability += stab_d
+    if stability > 100:
+        stability = 100
+    elif stability < 0:
+        print("boom!")
+        stability = 0
+    
 func update_labels():
     power_label.set_value(power)
     shield_label.set_value(shielding)

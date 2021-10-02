@@ -31,7 +31,7 @@ func _physics_process(delta):
     #update_labels()
 
 func update_power():
-    power = depth
+    power = depth - 160
 
 func update_stability():
     var excess = power - shielding
@@ -49,4 +49,3 @@ func update_stability():
 
 func set_depth(value):
     depth = value
-

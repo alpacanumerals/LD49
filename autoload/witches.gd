@@ -1,7 +1,8 @@
 extends Node
 
 var witch_array = []
-var witch_index = 2
+var witch_index = 0
+var witch_summon = []
 
 #namae, stars, facefile, ATK, DEF, ability index (0 for now)
 #index 0, 1, 2 always Gertrude, Manako and Yuli

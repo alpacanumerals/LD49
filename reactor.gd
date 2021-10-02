@@ -22,4 +22,9 @@ func _on_Button_pressed():
     witches.witch_index = randi()%3
     witches.witch_carding()
     ###TESTING CODE FOR THE WITCH CARD###
+    
+    ###TESTING CODE FOR SUMMONING###
+#    witches.witch_summon = 
+    ###TESTING CODE FOR SUMMONING###
+    
     pass # Replace with function body.

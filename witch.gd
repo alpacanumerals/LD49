@@ -1,8 +1,9 @@
 extends MarginContainer
 
 var dragging = false
-var homeLocation: Vector2
-var snapLocation: Vector2
+var home: Node
+var home_location: Vector2
+var snap_target: Node
 
 signal pick_up
 signal put_down
@@ -23,16 +24,24 @@ func initialise(witch_index):
 func _process(delta):
     if dragging:
         var mousepos = get_viewport().get_mouse_position()
-        self.set_global_position(mousepos)
+        set_global_position(mousepos)
 
 func _pick_up():
-    homeLocation = self.get_global_position()
-    snapLocation = homeLocation
+    home = get_parent()
+    snap_target = get_parent()
+    home_location = get_global_position()
     dragging = true
 
 func _put_down():
     dragging = false
-    self.set_global_position(snapLocation)
+    if snap_target != home:
+        get_parent().remove_child(self)
+        snap_target.add_child(self)
+        if snap_target.has_method("get_snap_location"):
+            var snap_loc = snap_target.get_snap_location()
+            self.set_global_position(snap_loc)
+    else:
+        self.set_global_position(home_location)
 
 func _on_Button_button_down():
     emit_signal("pick_up")
@@ -40,8 +49,10 @@ func _on_Button_button_down():
 func _on_Button_button_up():
     emit_signal("put_down")
 
-func _on_Witch_area_entered(area):
-    snapLocation = area.get_global_position()
+func _on_WitchZone_area_entered(area):
+    if dragging && "snappable" in area:
+        snap_target = area.get_snap_target()
     
-func _on_Witch_area_exited(area):
-    snapLocation = homeLocation
+func _on_WitchZone_area_exited(area):
+    if dragging && "snappable" in area:
+        snap_target = home

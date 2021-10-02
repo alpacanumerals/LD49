@@ -50,3 +50,8 @@ func dialogue():
     var dialogue_box_load = load("res://dialoguebox.tscn") #Dialogue test
     var dialogue_box = dialogue_box_load.instance()
     get_viewport().add_child(dialogue_box)
+    
+#Summon
+func summon():
+    
+    pass

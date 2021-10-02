@@ -22,8 +22,18 @@ var reactor_tick_counter: float = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready():
     var list_button_load = load("res://witch.tscn") #Dialogue test
-    var list_button = list_button_load.instance()
-    get_node("MarginContainer/VBoxContainer/HBoxContainer/ListPanel/WitchList").add_child(list_button)
+    var list_button_0 = list_button_load.instance()
+    get_node("MarginContainer/VBoxContainer/HBoxContainer/ListPanel/WitchList").add_child(list_button_0)
+    list_button_0.initialise(0)
+    
+    var list_button_1 = list_button_load.instance()
+    get_node("MarginContainer/VBoxContainer/HBoxContainer/ListPanel/WitchList").add_child(list_button_1)
+    list_button_1.initialise(1)
+    
+    var list_button_2 = list_button_load.instance()
+    get_node("MarginContainer/VBoxContainer/HBoxContainer/ListPanel/WitchList").add_child(list_button_2)
+    list_button_2.initialise(2)
+    
     vessel = get_node("MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel")
     power_label = get_node("MarginContainer/VBoxContainer/HBoxContainer/MainScreen/PowerLabel")
     shield_label = get_node("MarginContainer/VBoxContainer/HBoxContainer/MainScreen/ShieldLabel")

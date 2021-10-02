@@ -7,9 +7,17 @@ var snapLocation: Vector2
 signal pick_up
 signal put_down
 
+var witch_id: int
+
 func _ready():
     connect("pick_up", self, "_pick_up")
     connect("put_down", self, "_put_down")
+
+func initialise(witch_index):
+    witch_id = witch_index
+    var fetched_witch = witches.witch_array[witch_index]
+    var face = load("res://assets_faces/"+fetched_witch[2]+".png")
+    $Button.icon = face
 
 func _process(delta):
     if dragging:
@@ -19,7 +27,6 @@ func _process(delta):
 func _pick_up():
     homeLocation = self.get_global_position()
     snapLocation = homeLocation
-    print(homeLocation.x)
     dragging = true
 
 func _put_down():

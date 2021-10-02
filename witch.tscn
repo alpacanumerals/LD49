@@ -6,31 +6,37 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.29292, 6.16668 )
 
-[node name="Witch" type="Area2D"]
-position = Vector2( 0.694327, 0.699497 )
+[node name="MarginContainer" type="MarginContainer"]
+margin_right = 99.0
+margin_bottom = 49.0
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_group_": true
+"_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = -38.0
-margin_top = -36.0
-margin_right = 186.0
-margin_bottom = 37.0
+margin_right = 99.0
+margin_bottom = 49.0
+rect_clip_content = true
 focus_mode = 0
 enabled_focus_mode = 0
-text = "Witch of Theories"
+text = "sdfsdfsdf"
 icon = ExtResource( 2 )
+clip_text = true
 expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Collider" type="CollisionShape2D" parent="."]
+[node name="Witch" type="Area2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collider" type="CollisionShape2D" parent="Witch"]
 shape = SubResource( 1 )
 
-[connection signal="area_entered" from="." to="." method="_on_Witch_area_entered"]
-[connection signal="area_exited" from="." to="." method="_on_Witch_area_exited"]
-[connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
-[connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]
+[connection signal="button_down" from="Button" to="Witch" method="_on_Button_button_down"]
+[connection signal="button_up" from="Button" to="Witch" method="_on_Button_button_up"]
+[connection signal="area_entered" from="Witch" to="Witch" method="_on_Witch_area_entered"]
+[connection signal="area_exited" from="Witch" to="Witch" method="_on_Witch_area_exited"]

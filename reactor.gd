@@ -23,15 +23,15 @@ var reactor_tick_counter: float = 0.0
 func _ready():
     var list_button_load = load("res://witch.tscn") #Dialogue test
     var list_button_0 = list_button_load.instance()
-    get_node("MarginContainer/VBoxContainer/HBoxContainer/ListPanel/WitchList").add_child(list_button_0)
+    get_node("MarginContainer/VBoxContainer/HBoxContainer/ListPanel/Panel/WitchList").add_child(list_button_0)
     list_button_0.initialise(0)
     
     var list_button_1 = list_button_load.instance()
-    get_node("MarginContainer/VBoxContainer/HBoxContainer/ListPanel/WitchList").add_child(list_button_1)
+    get_node("MarginContainer/VBoxContainer/HBoxContainer/ListPanel/Panel/WitchList").add_child(list_button_1)
     list_button_1.initialise(1)
     
     var list_button_2 = list_button_load.instance()
-    get_node("MarginContainer/VBoxContainer/HBoxContainer/ListPanel/WitchList").add_child(list_button_2)
+    get_node("MarginContainer/VBoxContainer/HBoxContainer/ListPanel/Panel/WitchList").add_child(list_button_2)
     list_button_2.initialise(2)
     
     vessel = get_node("MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel")

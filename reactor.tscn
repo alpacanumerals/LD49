@@ -23,10 +23,7 @@ __meta__ = {
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -2.29959
-margin_top = 30.8144
-margin_right = -2.29956
-margin_bottom = 34.8144
+margin_bottom = 4.0
 custom_constants/margin_right = 40
 custom_constants/margin_top = 10
 custom_constants/margin_left = 40
@@ -222,10 +219,20 @@ margin_right = 1200.0
 margin_bottom = 700.0
 rect_min_size = Vector2( 208, 0 )
 
-[node name="WitchList" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/ListPanel"]
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer/ListPanel"]
+margin_right = 208.0
+margin_bottom = 676.0
+mouse_filter = 2
+size_flags_vertical = 3
+
+[node name="WitchList" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/Panel"]
+margin_top = 4.0
 margin_right = 208.0
 margin_bottom = 676.0
 size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/ListPanel"]
 margin_top = 680.0

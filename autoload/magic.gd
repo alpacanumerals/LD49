@@ -13,11 +13,6 @@ var reactor_tick_counter: float = 0.0
 
 var depth: int = 0
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
     pass # Replace with function body.
@@ -25,10 +20,9 @@ func _ready():
 func _physics_process(delta):
     reactor_tick_counter += delta
     if reactor_tick_counter > reactor_tick_size:
-        reactor_tick_counter = 0.0
+        reactor_tick_counter -= reactor_tick_size
         update_power()
         update_stability()
-    #update_labels()
 
 func update_power():
     power = depth - 160

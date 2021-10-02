@@ -1,7 +1,8 @@
-extends KinematicBody2D
+extends Area2D
 
 var dragging = false
-var startLocation: Vector2
+var homeLocation: Vector2
+var snapLocation: Vector2
 
 signal pick_up
 signal put_down
@@ -13,28 +14,26 @@ func _ready():
 func _process(delta):
     if dragging:
         var mousepos = get_viewport().get_mouse_position()
-        self.set_global_position(Vector2(mousepos.x, mousepos.y))
+        self.set_global_position(mousepos)
 
 func _pick_up():
-    print("foo")
-    startLocation = self.get_global_position()
+    homeLocation = self.get_global_position()
+    snapLocation = homeLocation
+    print(homeLocation.x)
     dragging = true
 
 func _put_down():
-    print("bar")
     dragging = false
-    var drop_candidates = $Collider.get_overlapping_bodies()
-    for candidate in drop_candidates:
-        if candidate.has_method("get_snap_location"):
-            var loc = candidate.get_snap_location()
-            self.set_global_position(loc)
-            return
-    self.set_global_position(startLocation)
+    self.set_global_position(snapLocation)
 
 func _on_Button_button_down():
-    print("baz")
     emit_signal("pick_up")
 
 func _on_Button_button_up():
-    print("bonk")
     emit_signal("put_down")
+
+func _on_Witch_area_entered(area):
+    snapLocation = area.get_global_position()
+    
+func _on_Witch_area_exited(area):
+    snapLocation = homeLocation

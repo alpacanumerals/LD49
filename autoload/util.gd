@@ -53,5 +53,7 @@ func dialogue():
     
 #Summon
 func summon():
-    
+#    var summon_box_load = load()
+#    var dialogue_box = dialogue_box_load.instance()
+#    get_viewport().add_child(dialogue_box)
     pass

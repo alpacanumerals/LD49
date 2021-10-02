@@ -15,6 +15,7 @@ func _on_NewGameButton_pressed():
 #    var ptest = ptest_instance.instance()
 #    add_child(ptest)
 #    util.dialogue()
+    witches.init_witches()
     switcher.switchScene("res://reactor.tscn")
     
 func _on_OptionsButton_button_down():

@@ -1,6 +1,6 @@
 extends MarginContainer
 
-# Called in two situations: Display a Witch and Roll a Witch
+# Called to display a Witch.
 var progress:bool = false
 
 

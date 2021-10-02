@@ -1,14 +1,14 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/yuli.png" type="Texture" id=1]
-[ext_resource path="res://assets/star5.png" type="Texture" id=2]
+[ext_resource path="res://assets/star5.png" type="Texture" id=1]
+[ext_resource path="res://assets/yuli.png" type="Texture" id=2]
 [ext_resource path="res://fonts/OpenSans-name.tres" type="DynamicFont" id=3]
 [ext_resource path="res://fonts/OpenSans-Values.tres" type="DynamicFont" id=4]
 [ext_resource path="res://fonts/OpenSans-DEF.tres" type="DynamicFont" id=5]
 [ext_resource path="res://fonts/OpenSans-ATK.tres" type="DynamicFont" id=6]
-[ext_resource path="res://summon.gd" type="Script" id=7]
+[ext_resource path="res://witchcard.gd" type="Script" id=7]
 
-[node name="SummonScreen" type="MarginContainer"]
+[node name="WitchCard" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/margin_right = 500
@@ -57,12 +57,12 @@ margin_top = 38.0
 margin_right = 256.0
 margin_bottom = 294.0
 rect_min_size = Vector2( 256, 256 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 expand = true
 stretch_mode = 5
 
 [node name="Stars" type="Sprite" parent="Card/MarginContainer/VBoxContainer/WaifuPic"]
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 centered = false
 
 [node name="MarginContainer" type="MarginContainer" parent="Card/MarginContainer/VBoxContainer"]

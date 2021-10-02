@@ -1,16 +1,52 @@
 extends Node
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
+var witch_array = []
+#[Name, stars, facefile, ATK, DEF, ability index (0 for now)]
+#index 0, 1, 2 always Gertrude, Manako and Yuli
 func _ready():
+    pause_mode = Node.PAUSE_MODE_PROCESS
     pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#    pass
+func init_witches():
+    var roll = util.d100()
+    var atk:int
+    var def:int
+    if roll <= 35:
+        atk = 300 + util.d6()*50
+        def = 500 + util.d6()*50
+    elif roll <= 65:
+        atk = 400 + util.d6()*50
+        def = 400 + util.d6()*50        
+    else:
+        atk = 500 + util.d6()*50
+        def = 300 + util.d6()*50        
+    var gertrude = ["Gertrude",1,"gertrude",atk,def,0]
+    
+    roll = util.d100()
+    if roll <= 40:
+        atk = 200 + util.d6()*50
+        def = 600 + util.d6()*50
+    elif roll <= 60:
+        atk = 400 + util.d6()*50
+        def = 400 + util.d6()*50        
+    else:
+        atk = 600 + util.d6()*50
+        def = 200 + util.d6()*50    
+    var manako = ["Manako",1,"manako",atk,def,0]
+    
+    roll = util.d100()
+    if roll <= 30:
+        atk = 450 + util.d6()*50
+        def = 750 + util.d6()*50
+    elif roll <= 70:
+        atk = 600 + util.d6()*50
+        def = 600 + util.d6()*50        
+    else:
+        atk = 750 + util.d6()*50
+        def = 450 + util.d6()*50  
+    var yuli = ["Yuli",2,"yuli",atk,def,0]
+    witch_array.append(gertrude)
+    witch_array.append(manako)
+    witch_array.append(yuli)
+    breakpoint

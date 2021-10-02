@@ -75,13 +75,12 @@ custom_constants/margin_top = 10
 custom_constants/margin_left = 2
 custom_constants/margin_bottom = 2
 
-[node name="Label" type="Label" parent="Card/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="Text" type="Label" parent="Card/MarginContainer/VBoxContainer/MarginContainer"]
 margin_left = 2.0
 margin_top = 10.0
 margin_right = 254.0
 margin_bottom = 98.0
 size_flags_vertical = 7
-text = "d"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Card/MarginContainer/VBoxContainer"]
 margin_top = 402.0

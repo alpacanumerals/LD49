@@ -1,7 +1,5 @@
 extends ColorRect
 
-var witches = []
-
 var yan:int = 100
 var tsun:int = 100
 var dere:int = 100
@@ -20,5 +18,8 @@ func _on_Button_button_down():
     switcher.playClick()
     
 func _on_Button_pressed():
-    util.summon()
+    ###TESTING CODE FOR THE WITCH CARD###
+    witches.witch_index = randi()%3
+    witches.witch_carding()
+    ###TESTING CODE FOR THE WITCH CARD###
     pass # Replace with function body.

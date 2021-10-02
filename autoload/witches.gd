@@ -1,7 +1,8 @@
 extends Node
 
 var witch_array = []
-#[Name, stars, facefile, ATK, DEF, ability index (0 for now)]
+var witch_index:int=0
+#[namae, stars, facefile, ATK, DEF, ability index (0 for now)]
 #index 0, 1, 2 always Gertrude, Manako and Yuli
 func _ready():
     pause_mode = Node.PAUSE_MODE_PROCESS
@@ -49,4 +50,8 @@ func init_witches():
     witch_array.append(gertrude)
     witch_array.append(manako)
     witch_array.append(yuli)
-    breakpoint
+
+func witch_carding():
+    var witch_card_load = load("res://witchcard.tscn") #Dialogue test
+    var witch_card = witch_card_load.instance()
+    get_viewport().add_child(witch_card)

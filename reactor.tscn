@@ -122,34 +122,42 @@ text = "Power: 100"
 script = ExtResource( 7 )
 statname = "Power"
 
-[node name="StabLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen"]
+[node name="ShieldLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen"]
 margin_top = 18.0
 margin_right = 776.0
 margin_bottom = 32.0
 text = "Power: 100"
 script = ExtResource( 7 )
-statname = "Stab"
+statname = "Shielding"
 
-[node name="TsunLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen"]
+[node name="StabLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen"]
 margin_top = 36.0
 margin_right = 776.0
 margin_bottom = 50.0
 text = "Power: 100"
 script = ExtResource( 7 )
-statname = "Tsun"
+statname = "Stability"
 
-[node name="YanLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen"]
+[node name="TsunLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen"]
 margin_top = 54.0
 margin_right = 776.0
 margin_bottom = 68.0
 text = "Power: 100"
 script = ExtResource( 7 )
-statname = "Yan"
+statname = "Tsun"
 
-[node name="DereLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen"]
+[node name="YanLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen"]
 margin_top = 72.0
 margin_right = 776.0
 margin_bottom = 86.0
+text = "Power: 100"
+script = ExtResource( 7 )
+statname = "Yan"
+
+[node name="DereLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen"]
+margin_top = 90.0
+margin_right = 776.0
+margin_bottom = 104.0
 text = "Power: 100"
 script = ExtResource( 7 )
 statname = "Dere"

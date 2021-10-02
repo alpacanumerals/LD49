@@ -10,10 +10,14 @@ var shielding: int = 100
 
 var vessel
 var power_label
+var shield_label
 var stab_label
 var tsun_label
 var yan_label
 var dere_label
+
+var reactor_tick_size: float = 0.1
+var reactor_tick_counter: float = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,29 +26,34 @@ func _ready():
     get_node("MarginContainer/VBoxContainer/HBoxContainer/ListPanel/WitchList").add_child(list_button)
     vessel = get_node("MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel")
     power_label = get_node("MarginContainer/VBoxContainer/HBoxContainer/MainScreen/PowerLabel")
+    shield_label = get_node("MarginContainer/VBoxContainer/HBoxContainer/MainScreen/ShieldLabel")
     stab_label = get_node("MarginContainer/VBoxContainer/HBoxContainer/MainScreen/StabLabel")
     tsun_label = get_node("MarginContainer/VBoxContainer/HBoxContainer/MainScreen/TsunLabel")
     yan_label = get_node("MarginContainer/VBoxContainer/HBoxContainer/MainScreen/YanLabel")
     dere_label = get_node("MarginContainer/VBoxContainer/HBoxContainer/MainScreen/DereLabel")
 
 func _physics_process(delta):
-    power = vessel.depth-160
-    var excess = power - shielding
-    var stab_d = 0
-    if excess > 0:
-        stab_d = -excess
-    else:
-        stab_d = 1
-    stability += stab_d
-    if stability > 100:
-        stability = 100
-    elif stability < 0:
-        print("boom!")
-        stability = 50
+    reactor_tick_counter += delta
+    if reactor_tick_counter > reactor_tick_size:
+        reactor_tick_counter = 0.0
+        power = vessel.depth/4
+        var excess = power - shielding
+        var stab_d = 0
+        if excess > 0:
+            stab_d = -excess
+        else:
+            stab_d = 1
+        stability += stab_d
+        if stability > 100:
+            stability = 100
+        elif stability < 0:
+            print("boom!")
+            stability = 0
     update_labels()
 
 func update_labels():
     power_label.set_value(power)
+    shield_label.set_value(shielding)
     stab_label.set_value(stability)
     tsun_label.set_value(tsun)
     yan_label.set_value(yan)

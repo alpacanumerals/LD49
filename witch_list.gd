@@ -9,3 +9,12 @@ func _on_SummonButton_add_witch():
     var list_button = list_button_load.instance()
     add_child(list_button)
     list_button.initialise(witches.witch_array.size()-1)
+
+func get_snap_target():
+    return self
+
+func occupy():
+    pass
+    
+func unoccupy():
+    pass

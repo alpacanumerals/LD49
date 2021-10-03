@@ -1,6 +1,7 @@
 extends Button
 
 signal add_witch
+signal doing_summon
 
 export var summon_timeout: int = 5
 var timeout_timer: float = 0.0
@@ -21,12 +22,10 @@ func _process(delta):
         timeout_timer = 0.0
 
 func do_summon():
+    emit_signal("doing_summon")
     witches.witch_summon(magic.energy)
     magic.energy = 0.0
-    var list_button_load = load("res://witch.tscn")
-    var list_button = list_button_load.instance()
     emit_signal("add_witch")
-    list_button.initialise(witches.witch_array.size()-1)
     witches.witch_display_summon()
 
 func _on_SummonButton_button_down():

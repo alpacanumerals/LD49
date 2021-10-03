@@ -17,6 +17,9 @@ func _ready():
     connect("put_down", self, "_put_down")
 
 func initialise(witch_index):
+    var summoner = get_parent().get_parent().get_parent().get_node("SummonButton")
+    summoner.connect("doing_summon", self, "_on_summon_interrupt")
+    
     witch_id = witch_index
     var fetched_witch = witches.witch_array[witch_index]
     var face
@@ -39,19 +42,22 @@ func _pick_up():
     dragging = true
 
 func _put_down():
-    dragging = false
-    if snap_target != home:
-        get_parent().remove_child(self)
-        if home.has_method("update_magic"):
-            home.update_magic(-1)
-        snap_target.add_child(self)
-        if snap_target.has_method("update_magic"):
-            snap_target.update_magic(witch_id)
-        if snap_target.has_method("get_snap_location"):
-            var snap_loc = snap_target.get_snap_location()
-            self.set_global_position(snap_loc)
-    else:
-        self.set_global_position(home_location)
+    if dragging:
+        dragging = false
+        if snap_target != home:
+            get_parent().remove_child(self)
+            if home.has_method("update_magic"):
+                home.update_magic(-1)
+            snap_target.add_child(self)
+            home.unoccupy()
+            snap_target.occupy()
+            if snap_target.has_method("update_magic"):
+                snap_target.update_magic(witch_id)
+            if snap_target.has_method("get_snap_location"):
+                var snap_loc = snap_target.get_snap_location()
+                self.set_global_position(snap_loc)
+        else:
+            self.set_global_position(home_location)
 
 func _on_Button_gui_input(event):
     if event is InputEventMouseButton and event.pressed:
@@ -75,11 +81,13 @@ func _on_Button_button_up():
 
 func _on_WitchZone_area_entered(area):
     if dragging && "snappable" in area:
-        snap_target = area.get_snap_target()
-    
+        if !area.occupied:
+            snap_target = area.get_snap_target()
+
 func _on_WitchZone_area_exited(area):
     if dragging && "snappable" in area:
         snap_target = home
 
-
-
+func _on_summon_interrupt():
+    if dragging:
+        emit_signal("put_down")

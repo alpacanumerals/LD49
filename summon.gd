@@ -18,6 +18,13 @@ func _ready():
     get_node("Card/MarginContainer/VBoxContainer/HBoxContainer/DefValue").text = String(summoned_witch[4])
     
     yield(get_tree().create_timer(1), "timeout")
+    match summoned_witch[1]:
+        1:
+            $Jingle1.play()
+        2:
+            $Jingle2.play()
+        _:
+            $Jingle3.play()
     progress = true
 
 func _input(event):

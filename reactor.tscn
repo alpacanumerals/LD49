@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/shaft.png" type="Texture" id=1]
 [ext_resource path="res://assets/pod.png" type="Texture" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://containmentvessel.gd" type="Script" id=4]
 [ext_resource path="res://assets/circle.png" type="Texture" id=5]
 [ext_resource path="res://magic_circle_slot.gd" type="Script" id=6]
-[ext_resource path="res://stat_label.gd" type="Script" id=7]
 [ext_resource path="res://witch_list_zone.gd" type="Script" id=8]
 [ext_resource path="res://assets/cablecar.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/metalmoans04.wav" type="AudioStream" id=10]
@@ -370,48 +369,109 @@ size_flags_vertical = 3
 margin_right = 776.0
 margin_bottom = 216.0
 
-[node name="ShieldLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+[node name="ShieldContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
 margin_right = 776.0
+margin_bottom = 15.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/ShieldContainer2"]
+margin_right = 50.0
 margin_bottom = 14.0
-text = "Power: 100"
-script = ExtResource( 7 )
+rect_min_size = Vector2( 50, 0 )
+text = "Shield"
+align = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/ShieldContainer2"]
+margin_left = 54.0
+margin_right = 654.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 600, 15 )
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+max_value = 1000.0
+percent_visible = false
+script = ExtResource( 15 )
 stat_name = "shielding"
-stat_label = "Shielding"
 
-[node name="PowerLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
-margin_top = 18.0
+[node name="PowerContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+margin_top = 19.0
 margin_right = 776.0
-margin_bottom = 32.0
-text = "Power: 100"
-script = ExtResource( 7 )
+margin_bottom = 34.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/PowerContainer3"]
+margin_right = 50.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 50, 0 )
+text = "Power"
+align = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/PowerContainer3"]
+margin_left = 54.0
+margin_right = 654.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 600, 15 )
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+max_value = 1000.0
+percent_visible = false
+script = ExtResource( 15 )
 stat_name = "power"
-stat_label = "Power"
 
-[node name="StabLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
-margin_top = 36.0
+[node name="StabilityLabel" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+margin_top = 38.0
 margin_right = 776.0
-margin_bottom = 50.0
-text = "Power: 100"
-script = ExtResource( 7 )
+margin_bottom = 53.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/StabilityLabel"]
+margin_right = 51.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 50, 0 )
+text = "Stability"
+align = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/StabilityLabel"]
+margin_left = 55.0
+margin_right = 655.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 600, 15 )
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+max_value = 1000.0
+percent_visible = false
+script = ExtResource( 15 )
 stat_name = "stability"
-stat_label = "Stability"
 
-[node name="Tsuncontainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
-margin_top = 54.0
+[node name="TsunContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+margin_top = 57.0
 margin_right = 776.0
-margin_bottom = 74.0
+margin_bottom = 72.0
 
-[node name="TsunLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/Tsuncontainer"]
-margin_top = 3.0
-margin_right = 38.0
-margin_bottom = 17.0
-text = "Tsun: "
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/TsunContainer"]
+margin_right = 50.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 50, 0 )
+text = "Tsun "
+align = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/Tsuncontainer"]
-margin_left = 42.0
-margin_right = 642.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 600, 20 )
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/TsunContainer"]
+margin_left = 54.0
+margin_right = 654.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 600, 15 )
 custom_styles/fg = SubResource( 3 )
 custom_styles/bg = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -420,39 +480,89 @@ max_value = 1000.0
 percent_visible = false
 script = ExtResource( 15 )
 stat_name = "tsun"
-stat_label = "Tsun"
 
-[node name="YanLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
-margin_top = 78.0
+[node name="YanContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+margin_top = 76.0
 margin_right = 776.0
-margin_bottom = 92.0
-text = "Power: 100"
-script = ExtResource( 7 )
-stat_name = "yan"
-stat_label = "Yan"
+margin_bottom = 91.0
 
-[node name="DereLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
-margin_top = 96.0
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/YanContainer2"]
+margin_right = 50.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 50, 0 )
+text = "Yan"
+align = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/YanContainer2"]
+margin_left = 54.0
+margin_right = 654.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 600, 15 )
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+max_value = 1000.0
+percent_visible = false
+script = ExtResource( 15 )
+stat_name = "yan"
+
+[node name="DereContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+margin_top = 95.0
 margin_right = 776.0
 margin_bottom = 110.0
-text = "Power: 100"
-script = ExtResource( 7 )
-stat_name = "dere"
-stat_label = "Dere"
 
-[node name="EnergyLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/DereContainer3"]
+margin_right = 50.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 50, 0 )
+text = "Dere"
+align = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/DereContainer3"]
+margin_left = 54.0
+margin_right = 654.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 600, 15 )
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+max_value = 1000.0
+percent_visible = false
+script = ExtResource( 15 )
+stat_name = "dere"
+
+[node name="EnergyContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
 margin_top = 114.0
 margin_right = 776.0
-margin_bottom = 128.0
-text = "Power: 100"
-script = ExtResource( 7 )
+margin_bottom = 129.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/EnergyContainer4"]
+margin_right = 50.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 50, 0 )
+text = "Energy"
+align = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/EnergyContainer4"]
+margin_left = 54.0
+margin_right = 654.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 600, 15 )
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+max_value = 10000.0
+percent_visible = false
+script = ExtResource( 15 )
 stat_name = "energy"
-stat_label = "Energy"
 
 [node name="SummonCountdown" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
-margin_top = 132.0
+margin_top = 133.0
 margin_right = 776.0
-margin_bottom = 146.0
+margin_bottom = 147.0
 script = ExtResource( 14 )
 
 [node name="ListPanel" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]

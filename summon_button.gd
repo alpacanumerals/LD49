@@ -2,7 +2,7 @@ extends Button
 
 signal add_witch
 
-export var summon_timeout: float = 10.0
+export var summon_timeout: float = 5.0
 var timeout_timer: float = 0.0
 
 # Called when the node enters the scene tree for the first time.

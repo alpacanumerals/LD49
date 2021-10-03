@@ -17,7 +17,11 @@ func _ready():
 func initialise(witch_index):
     witch_id = witch_index
     var fetched_witch = witches.witch_array[witch_index]
-    var face = load("res://assets_faces/"+fetched_witch[2]+".png")
+    var face
+    if witch_index < 3:
+        face = load("res://assets_faces/"+fetched_witch[2]+".png")
+    else:
+        face = load(witches.witch_array[witch_index][2])
     $Button.icon = face
     $Button.text = fetched_witch[0]
 

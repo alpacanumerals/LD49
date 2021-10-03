@@ -13,7 +13,7 @@ func _ready():
     
     get_node("Card/MarginContainer/VBoxContainer/WaifuName").text = summoned_witch[0]
     get_node("Card/MarginContainer/VBoxContainer/WaifuPic/Stars").texture = load("res://assets/star"+String(summoned_witch[1])+".png")
-    get_node("Card/MarginContainer/VBoxContainer/WaifuPic").texture = load("res://assets_faces/"+summoned_witch[2]+".png")
+    get_node("Card/MarginContainer/VBoxContainer/WaifuPic").texture = load(summoned_witch[2])
     get_node("Card/MarginContainer/VBoxContainer/HBoxContainer/AtkValue").text = String(summoned_witch[3])
     get_node("Card/MarginContainer/VBoxContainer/HBoxContainer/DefValue").text = String(summoned_witch[4])
     

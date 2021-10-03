@@ -25,7 +25,10 @@ func filePath(file):
     
 #RANDOM
 func randomFrom(array):
-    return array[randi() % array.size()]
+    var roll = randi() % array.size()
+    var value = array[roll]
+    array.remove(roll)
+    return value
 
 func percentChance(percent):
     if randi()%100+1 <= percent:

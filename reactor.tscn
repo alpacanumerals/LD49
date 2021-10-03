@@ -287,7 +287,7 @@ visible = false
 position = Vector2( 104.708, 333.153 )
 shape = SubResource( 2 )
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/ListPanel"]
+[node name="SummonButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/ListPanel"]
 margin_top = 680.0
 margin_right = 208.0
 margin_bottom = 700.0
@@ -299,5 +299,5 @@ margin_right = 1200.0
 margin_bottom = 704.0
 size_flags_vertical = 3
 
-[connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/Button" to="." method="_on_Button_button_down"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/Button" to="." method="_on_Button_pressed"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" to="." method="_on_Button_button_down"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" to="." method="_on_Button_pressed"]

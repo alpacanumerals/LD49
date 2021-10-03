@@ -4,6 +4,9 @@ var anchor = Vector2(100.0,0.0)
 var speed = 20
 var going_down:bool = false
 var going_up:bool= false
+var wobble = none
+enum {none, light}
+var wobtime:float
 
 var depth
 
@@ -18,7 +21,7 @@ func _process(delta):
     look_at(anchor) #This points the containment vessel to a point near the top.
     var velocity = Vector2()
     if going_down:
-        velocity.y += 15
+        velocity.y += 16
     if going_up:
         velocity.y -= 8     
     update() #This is needed for the cable to draw properly.  
@@ -47,6 +50,7 @@ func _on_GoingDown_toggled(button_pressed):
         going_down = true
         print(String(going_down))
         print(String(going_up))
+        
     else:   
         $CableSounds.stop()
         $MetalMoan.play()

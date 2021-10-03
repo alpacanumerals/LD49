@@ -38,11 +38,12 @@ func _process(_delta):
         set_global_position(mousepos + mouse_correction)
 
 func _pick_up():
+    dragging = true
     home = get_parent()
     snap_target = get_parent()
     home_location = get_global_position()
-    dragging = true
     self.rect_size = Vector2(60,60)
+    put_on_top()
     
 func _put_down():
     if dragging:
@@ -64,6 +65,11 @@ func _put_down():
                 self.rect_size = home.get_snap_size()
             self.set_global_position(home_location)
         
+func put_on_top():
+    var rid = get_canvas_item()
+    VisualServer.canvas_item_set_draw_index(rid, 255)
+    VisualServer.canvas_item_set_z_index(rid, 255)
+
 func _on_Button_gui_input(event):
     if event is InputEventMouseButton and event.pressed:
         match event.button_index:

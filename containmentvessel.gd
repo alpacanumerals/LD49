@@ -2,6 +2,8 @@ extends Node2D
 
 var anchor = Vector2(100.0,0.0)
 var speed = 20
+var going_down:bool = false
+var going_up:bool= false
 
 var depth
 
@@ -14,23 +16,47 @@ func _ready():
 
 func _process(delta):
     look_at(anchor) #This points the containment vessel to a point near the top.
-    
-    ###TEMPORARY TESTING CODE
     var velocity = Vector2()
-    if Input.is_action_pressed("pmove_right"):
-        velocity.x += 1
-    if Input.is_action_pressed("pmove_left"):
-        velocity.x -= 1
-    if Input.is_action_pressed("pmove_down"):
-        velocity.y += 1
-    if Input.is_action_pressed("pmove_up"):
-        velocity.y -= 1    
-    if velocity.length() > 0:
-        velocity = velocity.normalized() * speed
+    if going_down:
+        velocity.y += 15
+    if going_up:
+        velocity.y -= 8     
+    update() #This is needed for the cable to draw properly.  
     position += velocity * delta
-    ###TEMPORARY TESTING CODE
-        
+    position.x = clamp(position.x, 16, 104)
+    position.y = clamp(position.y, 29, 684)
     magic.set_depth(global_position.y)
-    
-    update() #This is needed for the cable to draw properly.
-    pass
+                
+    ###TEMPORARY TESTING CODE
+
+#    if Input.is_action_pressed("pmove_right"):
+#        velocity.x += 1
+#    if Input.is_action_pressed("pmove_left"):
+#        velocity.x -= 1
+#    if Input.is_action_pressed("pmove_down"):
+#        velocity.y += 1
+#    if Input.is_action_pressed("pmove_up"):
+#        velocity.y -= 1    
+#    if velocity.length() > 0:
+#        velocity = velocity.normalized() * speed
+#    
+
+func _on_GoingDown_toggled(button_pressed):
+    if button_pressed:
+        $CableSounds.play()
+        going_down = true
+        print(String(going_down))
+        print(String(going_up))
+    else:   
+        $CableSounds.stop()
+        $MetalMoan.play()
+        going_down = false
+
+func _on_GoingUp_toggled(button_pressed):
+    if button_pressed:
+        $CableSounds.play()
+        going_up = true
+    else:
+        $CableSounds.stop()
+        $MetalMoan.play()
+        going_up = false

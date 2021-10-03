@@ -35,7 +35,6 @@ func _process(delta):
     position += velocity * delta    
     if position.x > 60:
         velocity.x -= 0.5
-        breakpoint
     else:
         velocity.x += 0.5
     ###TEMPORARY TESTING CODE

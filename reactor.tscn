@@ -133,7 +133,7 @@ margin_bottom = 420.0
 texture = ExtResource( 5 )
 
 [node name="MagicCircleSlot" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
-position = Vector2( 182.364, 79.4283 )
+position = Vector2( 177.395, 176.671 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
@@ -149,7 +149,7 @@ scale = Vector2( 0.264868, 0.272951 )
 texture = ExtResource( 5 )
 
 [node name="MagicCircleSlot2" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
-position = Vector2( 70.9799, 183.881 )
+position = Vector2( 92.2741, 254.152 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
@@ -166,7 +166,7 @@ scale = Vector2( 0.264868, 0.272951 )
 texture = ExtResource( 5 )
 
 [node name="MagicCircleSlot3" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
-position = Vector2( 280.566, 172.626 )
+position = Vector2( 54.1388, 61.1869 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
@@ -183,7 +183,7 @@ scale = Vector2( 0.264868, 0.272951 )
 texture = ExtResource( 5 )
 
 [node name="MagicCircleSlot4" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
-position = Vector2( 179.898, 272.826 )
+position = Vector2( 406.325, 177.003 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true

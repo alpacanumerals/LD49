@@ -12,4 +12,4 @@ func _ready():
 
 func _process(_delta):
     var value = magic[stat_name]
-    self.text = stat_label + ": " + str(value)
+    self.text = stat_label + ": " + str(int(value))

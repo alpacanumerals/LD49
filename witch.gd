@@ -27,7 +27,7 @@ func initialise(witch_index):
     $Button.icon = face
     $Button.text = fetched_witch[0]
 
-func _process(delta):
+func _process(_delta):
     if dragging:
         var mousepos = get_viewport().get_mouse_position()
         set_global_position(mousepos)
@@ -43,10 +43,10 @@ func _put_down():
     if snap_target != home:
         get_parent().remove_child(self)
         if home.has_method("update_magic"):
-            home.update_magic(self)
+            home.update_magic(-1)
         snap_target.add_child(self)
         if snap_target.has_method("update_magic"):
-            snap_target.update_magic(self)
+            snap_target.update_magic(witch_id)
         if snap_target.has_method("get_snap_location"):
             var snap_loc = snap_target.get_snap_location()
             self.set_global_position(snap_loc)

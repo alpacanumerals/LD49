@@ -13,5 +13,5 @@ func get_snap_target():
 func get_snap_location():
     return self.get_global_position()
 
-func update_magic(node):
-    magic.update_slot(slot_number, node)
+func update_magic(witch_id: int):
+    magic.update_slot(slot_number, witch_id)

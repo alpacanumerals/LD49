@@ -38,13 +38,13 @@ func percentChance(percent):
 #DICE
 func d100(dice:int = 1):
     var result:int = 0
-    for i in range(dice):
+    for _i in range(dice):
         result = result + randi()%100+1 
     return result
     
 func d6(dice:int = 1):
     var result:int = 0
-    for i in range(dice):
+    for _i in range(dice):
         result = result + randi()%6+1
     return result
 

@@ -17,6 +17,8 @@ var reactor_tick_counter: float = 0.0
 var auto_summon_rate: int = 10
 var auto_summon_timer: float = 0.0
 
+var bad_end: bool = false
+
 var depth: int = 0
 
 #atk, def
@@ -31,7 +33,6 @@ func _ready():
 
 func _physics_process(delta):
     reactor_tick_counter += delta
-    auto_summon_timer += delta
     if reactor_tick_counter > reactor_tick_size:
         reactor_tick_counter -= reactor_tick_size
         update_flux()
@@ -39,6 +40,7 @@ func _physics_process(delta):
         update_energy()
         update_shielding()
         update_stability()
+    auto_summon_timer += delta
 
 func update_flux():
     tsun = depth
@@ -81,9 +83,10 @@ func update_stability():
     stability += stab_d
     if stability > shielding:
         stability = shielding
-    elif stability < 0:
-        print("boom!")
-        stability = 0
+    elif stability <= 0:
+        bad_end = true
+        auto_summon_timer = auto_summon_rate
+        stability = 100
 
 func update_slot(slot_number, witch_id):
     var stats: Array

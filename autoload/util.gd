@@ -5,7 +5,7 @@ var file_dict
 func _ready():
     pause_mode = Node.PAUSE_MODE_PROCESS
     randomize()
-    loadJSONs()
+    #loadJSONs()
 
 func loadJSONs():
     var file = File.new()

@@ -10,6 +10,8 @@ signal put_down
 
 var witch_id: int
 
+var leftclick_check:bool = false
+
 func _ready():
     connect("pick_up", self, "_pick_up")
     connect("put_down", self, "_put_down")
@@ -51,11 +53,25 @@ func _put_down():
     else:
         self.set_global_position(home_location)
 
+func _on_Button_gui_input(event):
+    if event is InputEventMouseButton and event.pressed:
+        match event.button_index:
+            BUTTON_LEFT:
+                leftclick_check = true
+                emit_signal("pick_up")
+            BUTTON_RIGHT:
+                switcher.playClick()
+                
 func _on_Button_button_down():
-    emit_signal("pick_up")
+    pass #Passed as it's using the _on_Button_gui_input above.
 
 func _on_Button_button_up():
-    emit_signal("put_down")
+    if leftclick_check:
+        emit_signal("put_down")
+        leftclick_check = false
+    else:
+        witches.witch_index = witch_id
+        witches.witch_carding()
 
 func _on_WitchZone_area_entered(area):
     if dragging && "snappable" in area:
@@ -64,3 +80,6 @@ func _on_WitchZone_area_entered(area):
 func _on_WitchZone_area_exited(area):
     if dragging && "snappable" in area:
         snap_target = home
+
+
+

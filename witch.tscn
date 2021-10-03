@@ -20,6 +20,7 @@ margin_right = 99.0
 margin_bottom = 50.0
 rect_clip_content = true
 focus_mode = 0
+button_mask = 3
 enabled_focus_mode = 0
 text = "sdfsdfsdf"
 icon = ExtResource( 2 )
@@ -40,5 +41,6 @@ shape = SubResource( 1 )
 
 [connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]
+[connection signal="gui_input" from="Button" to="." method="_on_Button_gui_input"]
 [connection signal="area_entered" from="WitchZone" to="." method="_on_WitchZone_area_entered"]
 [connection signal="area_exited" from="WitchZone" to="." method="_on_WitchZone_area_exited"]

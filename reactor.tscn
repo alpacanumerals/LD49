@@ -183,7 +183,7 @@ scale = Vector2( 0.264868, 0.272951 )
 texture = ExtResource( 5 )
 
 [node name="MagicCircleSlot4" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
-position = Vector2( 406.325, 177.003 )
+position = Vector2( 410.105, 183.303 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
@@ -198,9 +198,6 @@ shape = SubResource( 1 )
 position = Vector2( 0.0823975, -0.649916 )
 scale = Vector2( 0.264868, 0.272951 )
 texture = ExtResource( 5 )
-
-[node name="MagicCircle" type="Node2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
-position = Vector2( 217.537, 254.451 )
 
 [node name="LowerControlArea" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer"]
 margin_top = 484.0

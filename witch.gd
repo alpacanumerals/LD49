@@ -12,6 +12,8 @@ var witch_id: int
 
 var leftclick_check:bool = false
 
+const mouse_correction = Vector2(-30,-30)
+
 func _ready():
     connect("pick_up", self, "_pick_up")
     connect("put_down", self, "_put_down")
@@ -33,7 +35,7 @@ func initialise(witch_index):
 func _process(_delta):
     if dragging:
         var mousepos = get_viewport().get_mouse_position()
-        set_global_position(mousepos)
+        set_global_position(mousepos + mouse_correction)
 
 func _pick_up():
     home = get_parent()

@@ -4,7 +4,7 @@
 [ext_resource path="res://assets_faces/yuli.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 11.7581, 11.674 )
+extents = Vector2( 0.382507, 0.378042 )
 
 [node name="Witch" type="MarginContainer"]
 margin_right = 99.0

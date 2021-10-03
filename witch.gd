@@ -40,7 +40,11 @@ func _pick_up():
     snap_target = get_parent()
     home_location = get_global_position()
     dragging = true
-
+    $Button.text = ""
+    print(String(self.rect_size.x))
+    print(String(self.rect_size.y))
+    self.rect_size = Vector2(60,60)
+    
 func _put_down():
     if dragging:
         dragging = false
@@ -58,7 +62,9 @@ func _put_down():
                 self.set_global_position(snap_loc)
         else:
             self.set_global_position(home_location)
-
+        $Button.text = witches.witch_array[witch_id][0]
+        
+        
 func _on_Button_gui_input(event):
     if event is InputEventMouseButton and event.pressed:
         match event.button_index:

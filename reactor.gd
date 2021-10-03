@@ -22,6 +22,8 @@ func _ready():
     var list_button_2 = list_button_load.instance()
     get_node("MarginContainer/VBoxContainer/HBoxContainer/ListPanel/Panel/WitchList").add_child(list_button_2)
     list_button_2.initialise(2)
+    
+    magic.auto_summon_timer = 0.0
 
 func _on_Button_button_down():
     switcher.playClick()

@@ -104,8 +104,7 @@ func witch_summon():
 
     witch_array.append([summon_name, summon_stars, summon_face, summon_ATK, summon_DEF, summon_abindex])
     
-func witch_summon2():
+func witch_display_summon():
     var summoning_load = load("res://summon.tscn")
     var summoning = summoning_load.instance()
-    get_viewport().add_child(summoning)    
-    pass
+    get_viewport().add_child(summoning)

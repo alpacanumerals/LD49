@@ -25,20 +25,3 @@ func _ready():
 
 func _on_Button_button_down():
     switcher.playClick()
-    
-func _on_Button_pressed():
-    ###TESTING CODE FOR THE WITCH CARD###
-#    witches.witch_index = randi()%3
-#    witches.witch_carding()
-    ###TESTING CODE FOR THE WITCH CARD###
-    
-    ###TESTING CODE FOR SUMMONING###
-    witches.witch_summon()
-    var list_button_load = load("res://witch.tscn")
-    var list_button = list_button_load.instance()
-    get_node("MarginContainer/VBoxContainer/HBoxContainer/ListPanel/Panel/WitchList").add_child(list_button)
-    list_button.initialise(witches.witch_array.size()-1)
-    witches.witch_summon2()
-    ###TESTING CODE FOR SUMMONING###
-    
-    pass # Replace with function body.

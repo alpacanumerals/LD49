@@ -19,15 +19,10 @@ func _ready():
     
     yield(get_tree().create_timer(1), "timeout")
     progress = true
-    pass # Replace with function body.
-    
+
 func _input(event):
     if event is InputEventMouseButton and progress == true:
         if event.button_index == BUTTON_LEFT and event.pressed:
             switcher.playClick()
             get_tree().paused = false
             queue_free()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#    pass

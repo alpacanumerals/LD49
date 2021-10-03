@@ -86,7 +86,7 @@ func witch_carding():
     get_viewport().add_child(witch_card)
 
 func witch_summon(energy):
-    summon_name = "Nozomi"# util.randomFrom(witch_names)
+    summon_name = util.randomFrom(witch_names)
     
     var thresholds = [
         5 + energy/100,

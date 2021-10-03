@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cablecar.wav-0d61d0a7da6523df1a9f0d5a2350a05c.sample"
+
+[deps]
+
+source_file="res://assets/cablecar.wav"
+dest_files=[ "res://.import/cablecar.wav-0d61d0a7da6523df1a9f0d5a2350a05c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -13,21 +13,18 @@ func _ready():
     
     get_node("Card/MarginContainer/VBoxContainer/WaifuName").text = summoned_witch[0]
     get_node("Card/MarginContainer/VBoxContainer/WaifuPic/Stars").texture = load("res://assets/star"+String(summoned_witch[1])+".png")
-    get_node("Card/MarginContainer/VBoxContainer/WaifuPic").texture = load("res://assets_faces/"+summoned_witch[2]+".png")
+    get_node("Card/MarginContainer/VBoxContainer/WaifuPic").texture = load(summoned_witch[2])
     get_node("Card/MarginContainer/VBoxContainer/HBoxContainer/AtkValue").text = String(summoned_witch[3])
     get_node("Card/MarginContainer/VBoxContainer/HBoxContainer/DefValue").text = String(summoned_witch[4])
     
     yield(get_tree().create_timer(1), "timeout")
     progress = true
-    pass # Replace with function body.
-    
+
 func _input(event):
     if event is InputEventMouseButton and progress == true:
         if event.button_index == BUTTON_LEFT and event.pressed:
             switcher.playClick()
             get_tree().paused = false
+            if (witches.witch_array.size() >= 13):
+                switcher.switchScene("res://victoryscreen.tscn")
             queue_free()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#    pass

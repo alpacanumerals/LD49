@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/yuli.png" type="Texture" id=1]
+[ext_resource path="res://assets_faces/yuli.png" type="Texture" id=1]
 [ext_resource path="res://assets/star5.png" type="Texture" id=2]
 [ext_resource path="res://fonts/OpenSans-name.tres" type="DynamicFont" id=3]
 [ext_resource path="res://fonts/OpenSans-Values.tres" type="DynamicFont" id=4]

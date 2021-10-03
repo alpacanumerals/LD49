@@ -1,12 +1,13 @@
 extends Node2D
 
 var anchor = Vector2(100.0,0.0)
-var speed = 20
+var velocity = Vector2()
 var going_down:bool = false
 var going_up:bool= false
 var wobble = none
 enum {none, light}
 var wobtime:float
+
 
 var depth
 
@@ -19,37 +20,27 @@ func _ready():
 
 func _process(delta):
     look_at(anchor) #This points the containment vessel to a point near the top.
-    var velocity = Vector2()
     if going_down:
-        velocity.y += 16
-    if going_up:
-        velocity.y -= 8     
+        velocity.y = 16.0
+    elif going_up:
+        velocity.y = -8.0
+    else:
+        velocity.y = 0.0  
     position.x = clamp(position.x, 16, 104)
-    position.y = clamp(position.y, 29, 684)
+    position.y = clamp(position.y, 30, 684)
     magic.set_depth(global_position.y)
     if wobtime == 6.0:
-        velocity.x += 2
-    else:
-        pass
-    wobtime -= delta
-    position += velocity * delta    
+        velocity.x = 6
     if position.x > 60:
-        velocity.x -= 0.5
+        velocity.x -= 0.1
     else:
-        velocity.x += 0.5
-    ###TEMPORARY TESTING CODE
-
-    if Input.is_action_pressed("pmove_right"):
-        velocity.x += 1
-    if Input.is_action_pressed("pmove_left"):
-        velocity.x -= 1
-    if Input.is_action_pressed("pmove_down"):
-        velocity.y += 1
-    if Input.is_action_pressed("pmove_up"):
-        velocity.y -= 1    
-    if velocity.length() > 0:
-        velocity = velocity.normalized() * speed
-        
+        velocity.x += 0.1
+    wobtime -= delta
+    wobtime = clamp(wobtime,0.0,20.0)
+    position += velocity * delta    
+    if wobtime == 0.0:
+        position.x = 60.0
+        velocity.x = 0.0
     update() #This is needed for the cable to draw properly.  
 
 func _on_GoingDown_toggled(button_pressed):

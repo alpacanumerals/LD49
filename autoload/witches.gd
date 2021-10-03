@@ -86,6 +86,8 @@ func witch_carding():
     get_viewport().add_child(witch_card)
 
 func witch_summon(energy):
+    var bad_end = magic.bad_end
+    
     summon_name = util.randomFrom(witch_names)
     
     var thresholds = [
@@ -115,6 +117,8 @@ func witch_summon(energy):
     summon_DEF = 250+summon_stars*250+util.d6(summon_stars)*50
 
     witch_array.append([summon_name, summon_stars, summon_face, summon_ATK, summon_DEF, summon_abindex])
+    if bad_end:
+        magic.bad_end = false
     
 func witch_display_summon():
     var summoning_load = load("res://summon.tscn")

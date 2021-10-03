@@ -30,7 +30,7 @@ margin_right = 1080.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 0, 120 )
 custom_fonts/font = ExtResource( 1 )
-text = "Title Screen"
+text = "Witch Activator"
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]

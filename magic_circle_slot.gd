@@ -13,7 +13,7 @@ func get_snap_target():
     return self
 
 func get_snap_location():
-    return self.get_global_position()
+    return self.get_global_position()+Vector2(-30,-30)
 
 func update_magic(witch_id: int):
     magic.update_slot(slot_number, witch_id)

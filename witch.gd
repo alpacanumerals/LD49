@@ -41,8 +41,6 @@ func _pick_up():
     home_location = get_global_position()
     dragging = true
     $Button.text = ""
-    print(String(self.rect_size.x))
-    print(String(self.rect_size.y))
     self.rect_size = Vector2(60,60)
     
 func _put_down():

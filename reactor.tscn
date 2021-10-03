@@ -265,6 +265,15 @@ script = ExtResource( 7 )
 stat_name = "dere"
 stat_label = "Dere"
 
+[node name="EnergyLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+margin_top = 108.0
+margin_right = 776.0
+margin_bottom = 122.0
+text = "Power: 100"
+script = ExtResource( 7 )
+stat_name = "energy"
+stat_label = "Energy"
+
 [node name="ListPanel" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 992.0
 margin_right = 1200.0

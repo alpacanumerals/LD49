@@ -83,17 +83,25 @@ func witch_carding():
     var witch_card = witch_card_load.instance()
     get_viewport().add_child(witch_card)
 
-func witch_summon():
+func witch_summon(energy):
     summon_name = util.randomFrom(witch_names)
-
+    
+    var thresholds = [
+        5 + energy/100,
+        25 + energy/80,
+        50 + energy/60,
+        75 + energy/40]
+    
+    print(thresholds)
+    
     var roll = util.d100()
-    if roll <= 5:
+    if roll <= thresholds[0]:
         summon_stars = 5
-    elif roll <= 25:
+    elif roll <= thresholds[1]:
         summon_stars = 4
-    elif roll <= 50:
+    elif roll <= thresholds[2]:
         summon_stars = 3
-    elif roll <= 75:
+    elif roll <= thresholds[3]:
         summon_stars = 2
     else:
         summon_stars = 1

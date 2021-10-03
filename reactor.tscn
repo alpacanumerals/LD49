@@ -132,69 +132,222 @@ margin_right = 568.0
 margin_bottom = 420.0
 texture = ExtResource( 5 )
 
-[node name="MagicCircleSlot" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
-position = Vector2( 177.395, 176.671 )
+[node name="CircleSlot" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 180, 180 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/MagicCircleSlot"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot"]
 position = Vector2( 0.668335, -0.668304 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/MagicCircleSlot"]
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot"]
 position = Vector2( 0.0823975, -0.649916 )
 scale = Vector2( 0.264868, 0.272951 )
 texture = ExtResource( 5 )
 
-[node name="MagicCircleSlot2" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
-position = Vector2( 92.2741, 254.152 )
+[node name="CircleSlot1" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 180, 0 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
 slot_number = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/MagicCircleSlot2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot1"]
 position = Vector2( 0.668335, -0.668304 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/MagicCircleSlot2"]
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot1"]
 position = Vector2( 0.0823975, -0.649916 )
 scale = Vector2( 0.264868, 0.272951 )
 texture = ExtResource( 5 )
 
-[node name="MagicCircleSlot3" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
-position = Vector2( 54.1388, 61.1869 )
+[node name="CircleSlot2" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 360, 180 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
 slot_number = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/MagicCircleSlot3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot2"]
 position = Vector2( 0.668335, -0.668304 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/MagicCircleSlot3"]
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot2"]
 position = Vector2( 0.0823975, -0.649916 )
 scale = Vector2( 0.264868, 0.272951 )
 texture = ExtResource( 5 )
 
-[node name="MagicCircleSlot4" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
-position = Vector2( 410.105, 183.303 )
+[node name="CircleSlot3" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 180, 360 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
 slot_number = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/MagicCircleSlot4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot3"]
 position = Vector2( 0.668335, -0.668304 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/MagicCircleSlot4"]
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot3"]
+position = Vector2( 0.0823975, -0.649916 )
+scale = Vector2( 0.264868, 0.272951 )
+texture = ExtResource( 5 )
+
+[node name="CircleSlot4" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 0, 180 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+slot_number = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot4"]
+position = Vector2( 0.668335, -0.668304 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot4"]
+position = Vector2( 0.0823975, -0.649916 )
+scale = Vector2( 0.264868, 0.272951 )
+texture = ExtResource( 5 )
+
+[node name="CircleSlot5" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 20, 20 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+slot_number = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot5"]
+position = Vector2( 0.668335, -0.668304 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot5"]
+position = Vector2( 0.0823975, -0.649916 )
+scale = Vector2( 0.264868, 0.272951 )
+texture = ExtResource( 5 )
+
+[node name="CircleSlot6" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 340, 20 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+slot_number = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot6"]
+position = Vector2( 0.668335, -0.668304 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot6"]
+position = Vector2( 0.0823975, -0.649916 )
+scale = Vector2( 0.264868, 0.272951 )
+texture = ExtResource( 5 )
+
+[node name="CircleSlot7" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 340, 340 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+slot_number = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot7"]
+position = Vector2( 0.668335, -0.668304 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot7"]
+position = Vector2( 0.0823975, -0.649916 )
+scale = Vector2( 0.264868, 0.272951 )
+texture = ExtResource( 5 )
+
+[node name="CircleSlot8" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 20, 340 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+slot_number = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot8"]
+position = Vector2( 0.668335, -0.668304 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot8"]
+position = Vector2( 0.0823975, -0.649916 )
+scale = Vector2( 0.264868, 0.272951 )
+texture = ExtResource( 5 )
+
+[node name="CircleSlot9" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 103, 103 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+slot_number = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot9"]
+position = Vector2( 0.668335, -0.668304 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot9"]
+position = Vector2( 0.0823975, -0.649916 )
+scale = Vector2( 0.264868, 0.272951 )
+texture = ExtResource( 5 )
+
+[node name="CircleSlot10" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 257, 103 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+slot_number = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot10"]
+position = Vector2( 0.668335, -0.668304 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot10"]
+position = Vector2( 0.0823975, -0.649916 )
+scale = Vector2( 0.264868, 0.272951 )
+texture = ExtResource( 5 )
+
+[node name="CircleSlot11" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 257, 257 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+slot_number = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot11"]
+position = Vector2( 0.668335, -0.668304 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot11"]
+position = Vector2( 0.0823975, -0.649916 )
+scale = Vector2( 0.264868, 0.272951 )
+texture = ExtResource( 5 )
+
+[node name="CircleSlot12" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 103, 257 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+slot_number = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot12"]
+position = Vector2( 0.668335, -0.668304 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot12"]
 position = Vector2( 0.0823975, -0.649916 )
 scale = Vector2( 0.264868, 0.272951 )
 texture = ExtResource( 5 )

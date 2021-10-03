@@ -10,6 +10,9 @@ func _on_SummonButton_add_witch():
     add_child(list_button)
     list_button.initialise(witches.witch_array.size()-1)
 
+func get_snap_size():
+    return Vector2(get_parent().rect_size.x, 50)
+
 func get_snap_target():
     return self
 

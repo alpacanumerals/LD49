@@ -60,6 +60,8 @@ func _put_down():
                 var snap_loc = snap_target.get_snap_location()
                 self.set_global_position(snap_loc)
         else:
+            if home.has_method("get_snap_size"):
+                self.rect_size = home.get_snap_size()
             self.set_global_position(home_location)
         
 func _on_Button_gui_input(event):

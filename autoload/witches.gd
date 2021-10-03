@@ -13,6 +13,8 @@ var summon_ATK:int
 var summon_DEF:int
 var summon_abindex = 0
 
+var total_stars: int = 4
+
 #name, stars, facefile, ATK, DEF, ability index (0 for now)
 #index 0, 1, 2 always Gertrude, Manako and Yuli
 
@@ -105,6 +107,8 @@ func witch_summon(energy):
         summon_stars = 2
     else:
         summon_stars = 1
+    
+    total_stars += summon_stars
     
     summon_face = util.randomFrom(witch_faces)
     summon_ATK = 250+summon_stars*250+util.d6(summon_stars)*50

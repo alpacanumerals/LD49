@@ -25,4 +25,6 @@ func _input(event):
         if event.button_index == BUTTON_LEFT and event.pressed:
             switcher.playClick()
             get_tree().paused = false
+            if (witches.witch_array.size() >= 13):
+                switcher.switchScene("res://victoryscreen.tscn")
             queue_free()

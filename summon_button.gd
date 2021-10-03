@@ -24,7 +24,7 @@ func _process(delta):
 func do_summon():
     emit_signal("doing_summon")
     witches.witch_summon(magic.energy)
-    magic.energy = 0.0
+    magic.reset_energy()
     emit_signal("add_witch")
     witches.witch_display_summon()
 

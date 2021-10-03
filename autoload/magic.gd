@@ -9,6 +9,7 @@ var power: float = 0.0
 var shielding: float = 100.0
 
 var energy: int = 0
+var total_energy: int = 0
 
 var reactor_tick_size: float = 0.1
 var reactor_tick_counter: float = 0.0
@@ -62,6 +63,7 @@ func update_energy():
     energy += int(power)/50
     
 func reset_energy():
+    total_energy += energy
     energy = 0.0
 
 func update_shielding():

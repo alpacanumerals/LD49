@@ -24,7 +24,10 @@ var depth: int = 0
 #atk, def
 const null_stats = [0, 0]
 
-# for testing, 0 = centre, 1 = inner, 2 = ring, 3 = outer
+# 0 = centre
+# 1-4 = ring (dere)
+# 5-8 = outer (tsun)
+# 9-12 = inner (yan)
 var slots = []
 
 func _ready():
@@ -51,14 +54,18 @@ func update_flux():
         yan = 0
 
 func update_power():
-    var t_atk = slots[3][0] + slots[0][0]
-    var y_atk = slots[1][0] + slots[0][0]
+    var t_atk = (slots[5][0]+slots[6][0]+slots[7][0]+slots[8][0])
+    t_atk += slots[0][0]
+    var y_atk = (slots[9][0]+slots[10][0]+slots[11][0]+slots[12][0])
+    y_atk += slots[0][0]
+    
     var effective_t = tsun
     if tsun > t_atk:
         effective_t = t_atk
     var effective_y = yan
     if yan > y_atk:
         effective_y = y_atk
+        
     power = effective_t*t_atk/1000.0 + effective_y*y_atk/1000.0
 
 func update_energy():

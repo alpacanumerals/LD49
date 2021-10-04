@@ -149,6 +149,7 @@ func summon_timer():
     else:
         criticality = 4
         print("KABOOM!")
+    print(criticality)
 
 func reset_energy():
     total_energy += energy

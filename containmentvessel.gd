@@ -46,18 +46,23 @@ func _process(delta):
         velocity.x = 0.0
     base_position = position
     update() #This is needed for the cable to draw properly. 
-    judder() 
+    judder()
+    paradox()
 
 func judder():
-    var juddersize = magic.criticality - 2
-    if juddersize < 0:
-        juddersize = 0
-    if juddersize > 0:
+    if magic.criticality > 2:
+        var juddersize = magic.criticality-1
         var x_judder = randi()%juddersize
         var y_judder = randi()%juddersize
         var perturbed_position = position + Vector2(x_judder, y_judder)
         self.set_position(perturbed_position)
 
+func paradox():
+    if magic.criticality > 1:
+        $ParadoxNoise.play()
+    else:
+        $ParadoxNoise.stop()
+        
 func _on_GoingDown_toggled(button_pressed):
     if button_pressed:
         $CableSounds.play()

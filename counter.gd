@@ -1,0 +1,9 @@
+extends Label
+var timer = 0.0
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+    self.text = "Energy required for next summon: " + str(witches.min_energy)
+
+func _on_SummonButton_add_witch():
+    self.text = "Energy required for next summon: " + str(witches.min_energy)

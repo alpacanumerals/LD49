@@ -14,10 +14,13 @@ func _ready():
     fetched_witch = witches.witch_array[witches.witch_index]
     get_node("Card/MarginContainer/VBoxContainer/WaifuName").text = fetched_witch[0]
     get_node("Card/MarginContainer/VBoxContainer/WaifuPic/Stars").texture = load("res://assets/star"+String(fetched_witch[1])+".png")
-    get_node("Card/MarginContainer/VBoxContainer/WaifuPic").texture = load("res://assets_faces/"+fetched_witch[2]+".png")
+    if witches.witch_index > 2:
+        get_node("Card/MarginContainer/VBoxContainer/WaifuPic").texture = load(fetched_witch[2])
+    else:
+        get_node("Card/MarginContainer/VBoxContainer/WaifuPic").texture = load("res://assets_faces/"+fetched_witch[2]+".png")
     get_node("Card/MarginContainer/VBoxContainer/HBoxContainer/AtkValue").text = String(fetched_witch[3])
     get_node("Card/MarginContainer/VBoxContainer/HBoxContainer/DefValue").text = String(fetched_witch[4])
-    yield(get_tree().create_timer(1), "timeout")
+    get_node("Card/MarginContainer/VBoxContainer/MarginContainer/FlavourText").text = "click to continue..."
     progress = true
     pass # Replace with function body.
     

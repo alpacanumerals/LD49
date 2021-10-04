@@ -1,36 +1,53 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://witch.gd" type="Script" id=1]
-[ext_resource path="res://assets/yuli.png" type="Texture" id=2]
+[ext_resource path="res://assets_faces/yuli.png" type="Texture" id=2]
+[ext_resource path="res://assets/star1.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.29292, 6.16668 )
+extents = Vector2( 0.382507, 0.378042 )
 
-[node name="Witch" type="Area2D"]
-position = Vector2( 0.694327, 0.699497 )
+[node name="Witch" type="MarginContainer"]
+margin_right = 99.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_group_": true
+"_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = -38.0
-margin_top = -36.0
-margin_right = 186.0
-margin_bottom = 37.0
+margin_right = 99.0
+margin_bottom = 50.0
+rect_clip_content = true
 focus_mode = 0
+button_mask = 3
 enabled_focus_mode = 0
-text = "Witch of Theories"
 icon = ExtResource( 2 )
+clip_text = true
 expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Collider" type="CollisionShape2D" parent="."]
+[node name="WitchStars" type="Sprite" parent="."]
+position = Vector2( 10, 50 )
+rotation = -1.5708
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="WitchZone" type="Area2D" parent="."]
+position = Vector2( 26.951, 24.2286 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collider" type="CollisionShape2D" parent="WitchZone"]
 shape = SubResource( 1 )
 
-[connection signal="area_entered" from="." to="." method="_on_Witch_area_entered"]
-[connection signal="area_exited" from="." to="." method="_on_Witch_area_exited"]
 [connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]
+[connection signal="gui_input" from="Button" to="." method="_on_Button_gui_input"]
+[connection signal="area_entered" from="WitchZone" to="." method="_on_WitchZone_area_entered"]
+[connection signal="area_exited" from="WitchZone" to="." method="_on_WitchZone_area_exited"]

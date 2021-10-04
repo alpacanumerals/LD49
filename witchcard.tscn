@@ -8,7 +8,10 @@
 [ext_resource path="res://fonts/OpenSans-ATK.tres" type="DynamicFont" id=6]
 [ext_resource path="res://witchcard.gd" type="Script" id=7]
 
-[node name="WitchCard" type="MarginContainer"]
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 2
+
+[node name="WitchCard" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/margin_right = 500
@@ -20,13 +23,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Card" type="Panel" parent="."]
+[node name="Card" type="Panel" parent="WitchCard"]
 margin_left = 500.0
 margin_top = 150.0
 margin_right = 780.0
 margin_bottom = 600.0
 
-[node name="MarginContainer" type="MarginContainer" parent="Card"]
+[node name="MarginContainer" type="MarginContainer" parent="WitchCard/Card"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/margin_right = 12
@@ -37,7 +40,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Card/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="WitchCard/Card/MarginContainer"]
 margin_left = 12.0
 margin_top = 12.0
 margin_right = 268.0
@@ -46,13 +49,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WaifuName" type="Label" parent="Card/MarginContainer/VBoxContainer"]
+[node name="WaifuName" type="Label" parent="WitchCard/Card/MarginContainer/VBoxContainer"]
 margin_right = 256.0
 margin_bottom = 34.0
 custom_fonts/font = ExtResource( 3 )
 text = "Yuli"
 
-[node name="WaifuPic" type="TextureRect" parent="Card/MarginContainer/VBoxContainer"]
+[node name="WaifuPic" type="TextureRect" parent="WitchCard/Card/MarginContainer/VBoxContainer"]
 margin_top = 38.0
 margin_right = 256.0
 margin_bottom = 294.0
@@ -61,11 +64,11 @@ texture = ExtResource( 2 )
 expand = true
 stretch_mode = 5
 
-[node name="Stars" type="Sprite" parent="Card/MarginContainer/VBoxContainer/WaifuPic"]
+[node name="Stars" type="Sprite" parent="WitchCard/Card/MarginContainer/VBoxContainer/WaifuPic"]
 texture = ExtResource( 1 )
 centered = false
 
-[node name="MarginContainer" type="MarginContainer" parent="Card/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="WitchCard/Card/MarginContainer/VBoxContainer"]
 margin_top = 298.0
 margin_right = 256.0
 margin_bottom = 398.0
@@ -75,45 +78,47 @@ custom_constants/margin_top = 10
 custom_constants/margin_left = 2
 custom_constants/margin_bottom = 2
 
-[node name="FlavourText" type="Label" parent="Card/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="FlavourText" type="Label" parent="WitchCard/Card/MarginContainer/VBoxContainer/MarginContainer"]
 margin_left = 2.0
 margin_top = 10.0
 margin_right = 254.0
 margin_bottom = 98.0
 size_flags_vertical = 7
+align = 1
+valign = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Card/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="WitchCard/Card/MarginContainer/VBoxContainer"]
 margin_top = 402.0
 margin_right = 256.0
 margin_bottom = 426.0
 
-[node name="Atk" type="Label" parent="Card/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Atk" type="Label" parent="WitchCard/Card/MarginContainer/VBoxContainer/HBoxContainer"]
 margin_right = 38.0
 margin_bottom = 24.0
 custom_fonts/font = ExtResource( 6 )
 text = "ATK "
 
-[node name="AtkValue" type="Label" parent="Card/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="AtkValue" type="Label" parent="WitchCard/Card/MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 42.0
 margin_right = 81.0
 margin_bottom = 23.0
 custom_fonts/font = ExtResource( 4 )
 text = "1000"
 
-[node name="Control" type="Control" parent="Card/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Control" type="Control" parent="WitchCard/Card/MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 85.0
 margin_right = 172.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 
-[node name="DefValue" type="Label" parent="Card/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="DefValue" type="Label" parent="WitchCard/Card/MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 176.0
 margin_right = 215.0
 margin_bottom = 23.0
 custom_fonts/font = ExtResource( 4 )
 text = "1000"
 
-[node name="Def" type="Label" parent="Card/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Def" type="Label" parent="WitchCard/Card/MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 219.0
 margin_right = 256.0
 margin_bottom = 24.0

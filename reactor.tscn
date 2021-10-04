@@ -697,13 +697,13 @@ size_flags_vertical = 3
 
 [node name="Light2D" type="Light2D" parent="."]
 position = Vector2( 640, 360 )
+enabled = false
 texture = ExtResource( 23 )
-color = Color( 1, 0, 0, 1 )
-energy = 0.43
-mode = 3
+color = Color( 1, 0, 0.137255, 1 )
+energy = 2.8
 
-[connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingUp" to="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel" method="_on_GoingUp_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingUp" to="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft" method="_on_GoingUp_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingUp" to="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel" method="_on_GoingUp_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingDown" to="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft" method="_on_GoingDown_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingDown" to="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel" method="_on_GoingDown_toggled"]
 [connection signal="add_witch" from="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" to="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/Panel/WitchList" method="_on_SummonButton_add_witch"]

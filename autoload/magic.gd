@@ -72,7 +72,7 @@ func update_tflux():
         mod = 0.1+1.3*((depth-108.0)/22) #Just inside, t-flux rapidly increases, ending in a small spike.
         osc = 0.02
     elif depth > 670.0: 
-        mod = sqrt(sqrt(depth-669.0)) #Below 670m, flux becomes rapidly lethal.
+        mod = sqrt(depth-669.0) #Below 670m, flux becomes rapidly lethal.
         osc = 0.07
     else: 
         mod = 1.0
@@ -93,7 +93,7 @@ func update_yflux():
         mod = 0.5+0.5*((depth-108.0)/22) #Just inside, y-flux increases.
         osc = 0.02
     elif depth > 670.0: 
-        mod = sqrt(sqrt(depth-669.0)) #Below 670m, flux becomes rapidly lethal.
+        mod = sqrt(depth-669.0) #Below 670m, flux becomes rapidly lethal.
         osc = 0.02
     else:
         mod = 1.0
@@ -123,7 +123,7 @@ func update_shielding():
     var def = 0.0
     for i in range(13):
         def += slots[i][1]
-    shielding = def/5
+    shielding = def/10
         
 func summon_timer():
     var radiation = tsun+yan+dere

@@ -97,7 +97,7 @@ stream = ExtResource( 24 )
 [node name="Motes" type="CPUParticles2D" parent="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance"]
 position = Vector2( 60, 1000 )
 scale = Vector2( 2, 2 )
-amount = 300
+amount = 100
 lifetime = 2.67
 preprocess = 60.0
 speed_scale = 0.25

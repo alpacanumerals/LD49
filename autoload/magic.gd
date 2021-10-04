@@ -5,7 +5,7 @@ var gamestart
 var tsun:float = 0.0
 var yan:float = 0.0
 var dere:float = 0.0
-var dere_buildup:float = 1000.0
+var dere_buildup:float = 0.0
 var dere_decay:float = 0.0
 
 var stability: float = 100.0

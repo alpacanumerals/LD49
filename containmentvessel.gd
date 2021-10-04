@@ -8,6 +8,7 @@ var wobble = none
 enum {none, light}
 var wobtime:float
 
+var base_position = Vector2()
 
 var depth
 
@@ -17,8 +18,10 @@ func _draw():
 
 func _ready():
     depth = global_position.y
+    base_position = position
 
 func _process(delta):
+    set_position(base_position)
     look_at(anchor) #This points the containment vessel to a point near the top.
     if going_down:
         velocity.y = 16.0
@@ -37,11 +40,23 @@ func _process(delta):
         velocity.x += 0.1
     wobtime -= delta
     wobtime = clamp(wobtime,0.0,20.0)
-    position += velocity * delta    
+    position += velocity * delta
     if wobtime == 0.0:
         position.x = 60.0
         velocity.x = 0.0
-    update() #This is needed for the cable to draw properly.  
+    base_position = position
+    update() #This is needed for the cable to draw properly. 
+    judder() 
+
+func judder():
+    var juddersize = magic.criticality - 2
+    if juddersize < 0:
+        juddersize = 0
+    if juddersize > 0:
+        var x_judder = randi()%juddersize
+        var y_judder = randi()%juddersize
+        var perturbed_position = position + Vector2(x_judder, y_judder)
+        self.set_position(perturbed_position)
 
 func _on_GoingDown_toggled(button_pressed):
     if button_pressed:
@@ -55,6 +70,7 @@ func _on_GoingDown_toggled(button_pressed):
         going_down = false
         wobble = light
         wobtime = 6.0
+
 func _on_GoingUp_toggled(button_pressed):
     if button_pressed:
         $CableSounds.play()

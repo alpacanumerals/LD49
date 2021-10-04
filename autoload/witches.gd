@@ -15,6 +15,8 @@ var summon_abindex = 0
 
 var total_stars: int = 4
 
+var min_energy = 90
+
 #name, stars, facefile, ATK, DEF, ability index (0 for now)
 #index 0, 1, 2 always Gertrude, Manako and Yuli
 
@@ -79,6 +81,7 @@ func init_witches():
     witch_array.append(gertrude)
     witch_array.append(manako)
     witch_array.append(yuli)
+    set_minimum_energy()
 
 func witch_carding():
     var witch_card_load = load("res://witchcard.tscn") #Dialogue test
@@ -112,6 +115,8 @@ func witch_summon(energy):
         summon_stars = 2
     else:
         summon_stars = 1
+    if bad_end:
+        summon_stars = 0
     
     total_stars += summon_stars
     
@@ -120,10 +125,12 @@ func witch_summon(energy):
     summon_DEF = 250+summon_stars*250+util.d6(summon_stars)*50
 
     witch_array.append([summon_name, summon_stars, summon_face, summon_ATK, summon_DEF, summon_abindex])
-    #if bad_end:
-    #    magic.bad_end = false
+    set_minimum_energy()
     
 func witch_display_summon():
     var summoning_load = load("res://summon.tscn")
     var summoning = summoning_load.instance()
     get_viewport().add_child(summoning)
+
+func set_minimum_energy():
+    min_energy = 10*witch_array.size()*witch_array.size()

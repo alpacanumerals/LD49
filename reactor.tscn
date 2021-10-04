@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assets/shaft.png" type="Texture" id=1]
 [ext_resource path="res://assets/pod.png" type="Texture" id=2]
@@ -17,7 +17,6 @@
 [ext_resource path="res://stat_bar.gd" type="Script" id=15]
 [ext_resource path="res://tempnrg.gd" type="Script" id=16]
 [ext_resource path="res://tempshield.gd" type="Script" id=17]
-[ext_resource path="res://tempstab.gd" type="Script" id=18]
 [ext_resource path="res://tempyan.gd" type="Script" id=19]
 [ext_resource path="res://tempdere.gd" type="Script" id=20]
 [ext_resource path="res://temppower.gd" type="Script" id=21]
@@ -473,46 +472,10 @@ margin_bottom = 14.0
 size_flags_horizontal = 3
 script = ExtResource( 21 )
 
-[node name="StabilityLabel" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+[node name="TsunContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
 margin_top = 38.0
 margin_right = 776.0
 margin_bottom = 53.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/StabilityLabel"]
-margin_right = 60.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 60, 0 )
-text = "Stability"
-align = 2
-
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/StabilityLabel"]
-margin_left = 64.0
-margin_right = 664.0
-margin_bottom = 15.0
-rect_min_size = Vector2( 600, 15 )
-custom_styles/fg = SubResource( 2 )
-custom_styles/bg = SubResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-max_value = 1000.0
-percent_visible = false
-script = ExtResource( 15 )
-stat_name = "stability"
-
-[node name="tempstab" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/StabilityLabel"]
-margin_left = 668.0
-margin_right = 776.0
-margin_bottom = 14.0
-size_flags_horizontal = 3
-script = ExtResource( 18 )
-
-[node name="TsunContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
-margin_top = 57.0
-margin_right = 776.0
-margin_bottom = 72.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/TsunContainer"]
 margin_right = 65.0
@@ -543,9 +506,9 @@ size_flags_horizontal = 3
 script = ExtResource( 22 )
 
 [node name="YanContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
-margin_top = 76.0
+margin_top = 57.0
 margin_right = 776.0
-margin_bottom = 91.0
+margin_bottom = 72.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/YanContainer2"]
 margin_right = 60.0
@@ -576,9 +539,9 @@ size_flags_horizontal = 3
 script = ExtResource( 19 )
 
 [node name="DereContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
-margin_top = 95.0
+margin_top = 76.0
 margin_right = 776.0
-margin_bottom = 110.0
+margin_bottom = 91.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/DereContainer3"]
 margin_right = 69.0
@@ -609,9 +572,9 @@ size_flags_horizontal = 3
 script = ExtResource( 20 )
 
 [node name="EnergyContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
-margin_top = 114.0
+margin_top = 95.0
 margin_right = 776.0
-margin_bottom = 129.0
+margin_bottom = 110.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/EnergyContainer4"]
 margin_right = 60.0
@@ -642,15 +605,15 @@ size_flags_horizontal = 3
 script = ExtResource( 16 )
 
 [node name="SummonCountdown" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
-margin_top = 133.0
+margin_top = 114.0
 margin_right = 776.0
-margin_bottom = 147.0
+margin_bottom = 128.0
 script = ExtResource( 14 )
 
-[node name="Counter" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
-margin_top = 151.0
+[node name="EnergyCost" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+margin_top = 132.0
 margin_right = 776.0
-margin_bottom = 165.0
+margin_bottom = 146.0
 script = ExtResource( 7 )
 
 [node name="ListPanel" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
@@ -712,6 +675,7 @@ energy = 2.8
 [connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingUp" to="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft" method="_on_GoingUp_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingDown" to="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel" method="_on_GoingDown_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingDown" to="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft" method="_on_GoingDown_toggled"]
-[connection signal="add_witch" from="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" to="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/Panel/WitchList" method="_on_SummonButton_add_witch"]
+[connection signal="add_witch" from="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" to="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/EnergyContainer4/ProgressBar" method="_on_SummonButton_add_witch"]
+[connection signal="add_witch" from="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" to="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/EnergyCost" method="_on_SummonButton_add_witch"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" to="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" method="_on_SummonButton_button_down"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" to="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" method="_on_SummonButton_pressed"]

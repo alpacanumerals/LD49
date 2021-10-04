@@ -26,7 +26,7 @@ func do_summon():
     witches.witch_summon(magic.energy)
     magic.reset_energy()
     witches.witch_display_summon()
-    #emit_signal("add_witch")
+    emit_signal("add_witch")
 
 func _on_SummonButton_button_down():
     switcher.playClick()

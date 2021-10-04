@@ -1,14 +1,9 @@
 extends Label
 var timer = 0.0
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    pass # Replace with function body.
+    self.text = "Energy required for next summon: " + str(witches.min_energy)
 
-func _process(delta):
-    self.text = str(magic.dere_buildup)
+func _on_SummonButton_add_witch():
+    self.text = "Energy required for next summon: " + str(witches.min_energy)

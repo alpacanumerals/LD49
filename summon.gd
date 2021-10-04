@@ -78,6 +78,7 @@ func _ready():
                 get_node("Card/MarginContainer/VBoxContainer/WaifuPic").texture = deep1
             2:
                 get_node("Card/MarginContainer/VBoxContainer/WaifuPic").texture = deep2
+        progress = true
     else:
         settings.Orchestrion.volume_db = -16
         if theatrics:
@@ -131,7 +132,10 @@ func _input(event):
             settings.Orchestrion.volume_db = 0
             switcher.playClick()
             get_tree().paused = false
-            if (witches.witch_array.size() >= 13):
+            if magic.bad_end:
+                settings.Orchestrion.stop()
+                switcher.switchScene("res://failurescreen.tscn")
+            if witches.witch_array.size() >= 13:
                 settings.Orchestrion.stop()
                 switcher.switchScene("res://victoryscreen.tscn")
             queue_free()

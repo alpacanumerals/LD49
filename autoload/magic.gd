@@ -18,6 +18,8 @@ var flare_value: float = 0.0
 var energy: float = 0.0
 var total_energy: float = 0.0
 
+var criticality: int = 0
+
 var reactor_tick_size: float = 0.1
 var reactor_tick_counter: float = 0.0
 
@@ -132,13 +134,20 @@ func update_shielding():
 func summon_timer():
     var radiation = tsun+yan+dere
     var reactor_heat = radiation - shielding
+    if radiation < shielding * 0.2:
+        criticality = 0
+        summon_acceleration = 0
     if radiation < shielding * 0.5:
+        criticality = 1
         summon_acceleration = 0.95
     elif radiation < shielding * 0.8:
+        criticality = 2
         summon_acceleration = 1.1
-    elif radiation < shielding :
+    elif radiation < shielding:
+        criticality = 3
         summon_acceleration = 1.3
     else:
+        criticality = 4
         print("KABOOM!")
 
 func reset_energy():

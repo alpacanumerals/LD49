@@ -15,6 +15,7 @@ const theatrics: bool = true
 func _ready():
     pause_mode = Node.PAUSE_MODE_PROCESS
     get_tree().paused = true
+    var witch_list = get_tree().get_root().get_node("ColorRect/MarginContainer/VBoxContainer/HBoxContainer/ListPanel/Panel/WitchList")
     if magic.bad_end:
         settings.Orchestrion.stop()
         var deep_one = randi()%3
@@ -111,6 +112,7 @@ func _ready():
         get_node("Card/MarginContainer/VBoxContainer/WaifuPic").texture = load(summoned_witch[2])
         get_node("Card/MarginContainer/VBoxContainer/HBoxContainer/AtkValue").text = String(summoned_witch[3])
         get_node("Card/MarginContainer/VBoxContainer/HBoxContainer/DefValue").text = String(summoned_witch[4])
+        witch_list.add_witch()
         
         yield(get_tree().create_timer(0.5), "timeout")
         if summoned_witch[1] == 1 or summoned_witch[1] == 2:

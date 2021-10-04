@@ -5,6 +5,9 @@ func _ready():
     pass # Replace with function body.
 
 func _on_SummonButton_add_witch():
+    add_witch()
+
+func add_witch():
     var list_button_load = load("res://witch.tscn")
     var list_button = list_button_load.instance()
     add_child(list_button)

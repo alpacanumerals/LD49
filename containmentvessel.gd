@@ -59,7 +59,8 @@ func judder():
 
 func paradox():
     if magic.criticality > 1:
-        $ParadoxNoise.play()
+        if (!$ParadoxNoise.playing):
+            $ParadoxNoise.play()
     else:
         $ParadoxNoise.stop()
         

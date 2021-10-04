@@ -86,14 +86,16 @@ texture = ExtResource( 2 )
 [node name="CableSounds" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel"]
 stream = ExtResource( 9 )
 volume_db = -24.0
+bus = "Cable"
 
 [node name="MetalMoan" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel"]
 stream = ExtResource( 10 )
 volume_db = -18.0
+bus = "Cable"
 
 [node name="ParadoxNoise" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel"]
 stream = ExtResource( 24 )
-autoplay = true
+bus = "Paradox"
 
 [node name="Motes" type="CPUParticles2D" parent="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance"]
 position = Vector2( 60, 1000 )

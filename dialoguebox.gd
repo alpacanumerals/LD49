@@ -1,4 +1,4 @@
-extends Control
+extends MarginContainer
 
 var progress:bool = false
 
@@ -7,7 +7,6 @@ func _ready():
     pause_mode = Node.PAUSE_MODE_PROCESS
     get_tree().paused = true
     settings.Orchestrion.volume_db = -16
-    
     yield(get_tree().create_timer(2), "timeout")
     progress = true
 

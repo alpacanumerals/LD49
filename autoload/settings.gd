@@ -3,6 +3,7 @@ extends Node
 var volumeMusic: float
 var volumeSound: float
 var Orchestrion
+var Explosion
 var tutorial:bool = true
 
 func tutoring():
@@ -20,3 +21,11 @@ func _ready():
     Orchestrion.volume_db = 0
     Orchestrion.pitch_scale = 1
     Orchestrion.play()
+    
+    Explosion = AudioStreamPlayer.new()
+    var explosion = load("res://assets/explosion.wav")
+    add_child(Explosion)
+    Explosion.set_stream(explosion)
+    Explosion.volume_db = 10
+    Explosion.pitch_scale = 1
+    

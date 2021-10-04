@@ -668,7 +668,7 @@ rect_min_size = Vector2( 208, 0 )
 
 [node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer/ListPanel"]
 margin_right = 208.0
-margin_bottom = 676.0
+margin_bottom = 700.0
 mouse_filter = 2
 size_flags_vertical = 3
 
@@ -696,6 +696,7 @@ position = Vector2( 104.708, 333.153 )
 shape = SubResource( 4 )
 
 [node name="SummonButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/ListPanel"]
+visible = false
 margin_top = 680.0
 margin_right = 208.0
 margin_bottom = 700.0

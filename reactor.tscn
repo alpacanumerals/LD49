@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/shaft.png" type="Texture" id=1]
 [ext_resource path="res://assets/pod.png" type="Texture" id=2]
@@ -15,6 +15,13 @@
 [ext_resource path="res://summon_button.gd" type="Script" id=13]
 [ext_resource path="res://summon_countdown.gd" type="Script" id=14]
 [ext_resource path="res://stat_bar.gd" type="Script" id=15]
+[ext_resource path="res://tempnrg.gd" type="Script" id=16]
+[ext_resource path="res://tempshield.gd" type="Script" id=17]
+[ext_resource path="res://tempstab.gd" type="Script" id=18]
+[ext_resource path="res://tempyan.gd" type="Script" id=19]
+[ext_resource path="res://tempdere.gd" type="Script" id=20]
+[ext_resource path="res://temppower.gd" type="Script" id=21]
+[ext_resource path="res://temptsun.gd" type="Script" id=22]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 46.7068
@@ -76,9 +83,11 @@ texture = ExtResource( 2 )
 
 [node name="CableSounds" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel"]
 stream = ExtResource( 9 )
+volume_db = -24.0
 
 [node name="MetalMoan" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel"]
 stream = ExtResource( 10 )
+volume_db = -18.0
 
 [node name="Elevator" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 124.0
@@ -398,6 +407,13 @@ percent_visible = false
 script = ExtResource( 15 )
 stat_name = "shielding"
 
+[node name="tempshield" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/ShieldContainer2"]
+margin_left = 658.0
+margin_right = 776.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+script = ExtResource( 17 )
+
 [node name="PowerContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
 margin_top = 19.0
 margin_right = 776.0
@@ -426,6 +442,13 @@ max_value = 1000.0
 percent_visible = false
 script = ExtResource( 15 )
 stat_name = "power"
+
+[node name="temppower" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/PowerContainer3"]
+margin_left = 658.0
+margin_right = 776.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+script = ExtResource( 21 )
 
 [node name="StabilityLabel" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
 margin_top = 38.0
@@ -456,6 +479,13 @@ percent_visible = false
 script = ExtResource( 15 )
 stat_name = "stability"
 
+[node name="tempstab" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/StabilityLabel"]
+margin_left = 659.0
+margin_right = 776.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+script = ExtResource( 18 )
+
 [node name="TsunContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
 margin_top = 57.0
 margin_right = 776.0
@@ -481,6 +511,13 @@ max_value = 1000.0
 percent_visible = false
 script = ExtResource( 15 )
 stat_name = "tsun"
+
+[node name="temptsun" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/TsunContainer"]
+margin_left = 658.0
+margin_right = 776.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+script = ExtResource( 22 )
 
 [node name="YanContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
 margin_top = 76.0
@@ -508,6 +545,13 @@ percent_visible = false
 script = ExtResource( 15 )
 stat_name = "yan"
 
+[node name="tempyan" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/YanContainer2"]
+margin_left = 658.0
+margin_right = 776.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+script = ExtResource( 19 )
+
 [node name="DereContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
 margin_top = 95.0
 margin_right = 776.0
@@ -534,6 +578,13 @@ percent_visible = false
 script = ExtResource( 15 )
 stat_name = "dere"
 
+[node name="tempdere" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/DereContainer3"]
+margin_left = 658.0
+margin_right = 776.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+script = ExtResource( 20 )
+
 [node name="EnergyContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
 margin_top = 114.0
 margin_right = 776.0
@@ -559,6 +610,13 @@ max_value = 10000.0
 percent_visible = false
 script = ExtResource( 15 )
 stat_name = "energy"
+
+[node name="tempnrg" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/EnergyContainer4"]
+margin_left = 658.0
+margin_right = 776.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+script = ExtResource( 16 )
 
 [node name="SummonCountdown" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
 margin_top = 133.0

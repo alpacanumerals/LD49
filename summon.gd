@@ -13,7 +13,7 @@ var deep2 = preload("res://assets_faces/z2.jpeg")
 func _ready():
     pause_mode = Node.PAUSE_MODE_PROCESS
     get_tree().paused = true
-    if not magic.bad_end:
+    if magic.bad_end:
         var deep_one = randi()%3
         $Rise.play()
         yield(get_tree().create_timer(1), "timeout")

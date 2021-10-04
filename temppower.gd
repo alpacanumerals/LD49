@@ -1,5 +1,5 @@
 extends Label
-var timer = 0.0
+
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -10,5 +10,6 @@ var timer = 0.0
 func _ready():
     pass # Replace with function body.
 
+
 func _process(delta):
-    self.text = str(magic.dere_buildup)
+    self.text = str(magic.power)

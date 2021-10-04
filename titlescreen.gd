@@ -1,11 +1,8 @@
 extends MarginContainer
 
 func _ready():
-    pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#    pass
+    if !settings.Orchestrion.playing:
+        settings.Orchestrion.play()
 
 func _on_NewGameButton_button_down():
     switcher.playClick()
@@ -20,4 +17,3 @@ func _on_CheckButton_toggled(button_pressed):
         settings.tutorial = true
     else:
         settings.tutorial = false
-    pass # Replace with function body.

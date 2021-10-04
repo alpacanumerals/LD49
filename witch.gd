@@ -31,7 +31,8 @@ func initialise(witch_index):
         face = load(witches.witch_array[witch_index][2])
     $Button.icon = face
     $Button.text = fetched_witch[0]
-
+    $WitchStars.texture = load("res://assets/star"+str(fetched_witch[1])+".png")
+        
 func _process(_delta):
     if dragging:
         var mousepos = get_viewport().get_mouse_position()

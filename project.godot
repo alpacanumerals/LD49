@@ -21,7 +21,6 @@ settings="*res://autoload/settings.gd"
 switcher="*res://autoload/switcher.gd"
 witches="*res://autoload/witches.gd"
 magic="*res://autoload/magic.gd"
-music="*res://autoload/music.gd"
 
 [display]
 

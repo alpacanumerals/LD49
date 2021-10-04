@@ -86,16 +86,13 @@ texture = ExtResource( 2 )
 [node name="CableSounds" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel"]
 stream = ExtResource( 9 )
 volume_db = -24.0
-bus = "Cable"
 
 [node name="MetalMoan" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel"]
 stream = ExtResource( 10 )
 volume_db = -18.0
-bus = "Cable"
 
 [node name="ParadoxNoise" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel"]
 stream = ExtResource( 24 )
-bus = "Paradox"
 
 [node name="Motes" type="CPUParticles2D" parent="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance"]
 position = Vector2( 60, 1000 )
@@ -709,10 +706,10 @@ texture = ExtResource( 23 )
 color = Color( 1, 0, 0.137255, 1 )
 energy = 2.8
 
-[connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingUp" to="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel" method="_on_GoingUp_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingUp" to="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft" method="_on_GoingUp_toggled"]
-[connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingDown" to="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel" method="_on_GoingDown_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingUp" to="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel" method="_on_GoingUp_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingDown" to="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft" method="_on_GoingDown_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingDown" to="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel" method="_on_GoingDown_toggled"]
 [connection signal="add_witch" from="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" to="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/Panel/WitchList" method="_on_SummonButton_add_witch"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" to="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" method="_on_SummonButton_button_down"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" to="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" method="_on_SummonButton_pressed"]

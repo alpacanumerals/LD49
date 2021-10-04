@@ -110,7 +110,7 @@ func update_yflux():
     yan = clamp((fluct*depth*depth*depth*mod*(1.0+flare_value)/(350*350))-poison,0,20000.0)
 
 func update_dflux():
-    var d_factor = sqrt(slots[1][0]+slots[2][0]+slots[3][0]+slots[4][0])/100
+    var d_factor = sqrt(slots[1][0]+slots[2][0]+slots[3][0]+slots[4][0])/200
     var osc = 0.02
     var fluct = 1.0
 #    fluct = 1.0+util.randgen.randf_range(-osc,osc)
@@ -129,7 +129,7 @@ func update_shielding():
     var def = 0.0
     for i in range(5):
         def += slots[i][1]
-    shielding = 200 + def/10
+    shielding = 200 + def/4
         
 func summon_timer():
     var radiation = tsun+yan+dere

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/shaft.png" type="Texture" id=1]
 [ext_resource path="res://assets/pod.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://containmentvessel.gd" type="Script" id=4]
 [ext_resource path="res://assets/circle.png" type="Texture" id=5]
 [ext_resource path="res://magic_circle_slot.gd" type="Script" id=6]
+[ext_resource path="res://counter.gd" type="Script" id=7]
 [ext_resource path="res://witch_list_zone.gd" type="Script" id=8]
 [ext_resource path="res://assets/cablecar.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/metalmoans04.wav" type="AudioStream" id=10]
@@ -18,13 +19,13 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 46.7068
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.980392, 0.00784314, 0.00784314, 1 )
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.317647, 0, 0, 1 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 104.093, 338.725 )
 
 [node name="ColorRect" type="ColorRect"]
@@ -388,8 +389,8 @@ margin_left = 54.0
 margin_right = 654.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 600, 15 )
-custom_styles/fg = SubResource( 3 )
-custom_styles/bg = SubResource( 4 )
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 max_value = 1000.0
@@ -417,8 +418,8 @@ margin_left = 54.0
 margin_right = 654.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 600, 15 )
-custom_styles/fg = SubResource( 3 )
-custom_styles/bg = SubResource( 4 )
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 max_value = 1000.0
@@ -446,8 +447,8 @@ margin_left = 55.0
 margin_right = 655.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 600, 15 )
-custom_styles/fg = SubResource( 3 )
-custom_styles/bg = SubResource( 4 )
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 max_value = 1000.0
@@ -472,8 +473,8 @@ margin_left = 54.0
 margin_right = 654.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 600, 15 )
-custom_styles/fg = SubResource( 3 )
-custom_styles/bg = SubResource( 4 )
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 max_value = 1000.0
@@ -498,8 +499,8 @@ margin_left = 54.0
 margin_right = 654.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 600, 15 )
-custom_styles/fg = SubResource( 3 )
-custom_styles/bg = SubResource( 4 )
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 max_value = 1000.0
@@ -524,8 +525,8 @@ margin_left = 54.0
 margin_right = 654.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 600, 15 )
-custom_styles/fg = SubResource( 3 )
-custom_styles/bg = SubResource( 4 )
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 max_value = 1000.0
@@ -550,8 +551,8 @@ margin_left = 54.0
 margin_right = 654.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 600, 15 )
-custom_styles/fg = SubResource( 3 )
-custom_styles/bg = SubResource( 4 )
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 max_value = 10000.0
@@ -564,6 +565,12 @@ margin_top = 133.0
 margin_right = 776.0
 margin_bottom = 147.0
 script = ExtResource( 14 )
+
+[node name="Counter" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+margin_top = 151.0
+margin_right = 776.0
+margin_bottom = 165.0
+script = ExtResource( 7 )
 
 [node name="ListPanel" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 992.0
@@ -598,7 +605,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/Panel/WitchList/Area2D"]
 visible = false
 position = Vector2( 104.708, 333.153 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="SummonButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/ListPanel"]
 margin_top = 680.0
@@ -613,10 +620,10 @@ margin_right = 1200.0
 margin_bottom = 704.0
 size_flags_vertical = 3
 
-[connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingUp" to="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft" method="_on_GoingUp_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingUp" to="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel" method="_on_GoingUp_toggled"]
-[connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingDown" to="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft" method="_on_GoingDown_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingUp" to="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft" method="_on_GoingUp_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingDown" to="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel" method="_on_GoingDown_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingDown" to="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft" method="_on_GoingDown_toggled"]
 [connection signal="add_witch" from="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" to="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/Panel/WitchList" method="_on_SummonButton_add_witch"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" to="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" method="_on_SummonButton_button_down"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" to="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" method="_on_SummonButton_pressed"]

@@ -25,8 +25,7 @@ func _ready():
     
     magic.auto_summon_timer = 0.0
     if settings.tutorial == true:
-        
-        pass
+        settings.tutoring()
     magic.gamestart = true
 
 func _on_Button_button_down():

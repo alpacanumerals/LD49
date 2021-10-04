@@ -26,6 +26,8 @@ var auto_summon_timer: float = 0.0
 var summon_acceleration: float = 1.0
 var bad_end: bool = false
 
+const summon_threshold = 250
+
 var depth: float = 0
 
 #atk, def
@@ -54,7 +56,8 @@ func _physics_process(delta):
             update_energy()
             update_shielding()
             summon_timer()
-        auto_summon_timer += delta*summon_acceleration
+        if energy > summon_threshold:
+            auto_summon_timer += delta*summon_acceleration
 
 func update_dere_decay():
     dere_buildup += dere
@@ -124,16 +127,16 @@ func update_shielding():
     var def = 0.0
     for i in range(13):
         def += slots[i][1]
-    shielding = def/10
+    shielding = 200 + def/10
         
 func summon_timer():
     var radiation = tsun+yan+dere
     var reactor_heat = radiation - shielding
-    if reactor_heat < 0.0:
+    if radiation < shielding * 0.5:
         summon_acceleration = 0.95
-    elif reactor_heat < radiation * 0.3:
+    elif radiation < shielding * 0.8:
         summon_acceleration = 1.1
-    elif reactor_heat < radiation:
+    elif radiation < shielding :
         summon_acceleration = 1.3
     else:
         print("KABOOM!")

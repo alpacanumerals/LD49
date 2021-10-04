@@ -3,6 +3,7 @@ extends Node
 var volumeMusic: float
 var volumeSound: float
 var Orchestrion
+var tutorial:bool = true
 
 func _ready():
     pause_mode = Node.PAUSE_MODE_PROCESS

@@ -409,15 +409,15 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/ShieldContainer2"]
-margin_right = 60.0
+margin_right = 75.0
 margin_bottom = 14.0
-rect_min_size = Vector2( 60, 0 )
+rect_min_size = Vector2( 75, 0 )
 text = "Shield"
 align = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/ShieldContainer2"]
-margin_left = 64.0
-margin_right = 664.0
+margin_left = 79.0
+margin_right = 679.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 600, 15 )
 custom_styles/fg = SubResource( 2 )
@@ -430,7 +430,7 @@ script = ExtResource( 15 )
 stat_name = "shielding"
 
 [node name="tempshield" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/ShieldContainer2"]
-margin_left = 668.0
+margin_left = 683.0
 margin_right = 776.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
@@ -445,15 +445,15 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/PowerContainer3"]
-margin_right = 60.0
+margin_right = 75.0
 margin_bottom = 14.0
-rect_min_size = Vector2( 60, 0 )
+rect_min_size = Vector2( 75, 0 )
 text = "Power"
 align = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/PowerContainer3"]
-margin_left = 64.0
-margin_right = 664.0
+margin_left = 79.0
+margin_right = 679.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 600, 15 )
 custom_styles/fg = SubResource( 2 )
@@ -466,7 +466,7 @@ script = ExtResource( 15 )
 stat_name = "power"
 
 [node name="temppower" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/PowerContainer3"]
-margin_left = 668.0
+margin_left = 683.0
 margin_right = 776.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
@@ -478,15 +478,15 @@ margin_right = 776.0
 margin_bottom = 53.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/TsunContainer"]
-margin_right = 65.0
+margin_right = 75.0
 margin_bottom = 14.0
-rect_min_size = Vector2( 60, 0 )
+rect_min_size = Vector2( 75, 0 )
 text = "t-particles"
 align = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/TsunContainer"]
-margin_left = 69.0
-margin_right = 669.0
+margin_left = 79.0
+margin_right = 679.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 600, 15 )
 custom_styles/fg = SubResource( 2 )
@@ -499,7 +499,7 @@ script = ExtResource( 15 )
 stat_name = "tsun"
 
 [node name="temptsun" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/TsunContainer"]
-margin_left = 673.0
+margin_left = 683.0
 margin_right = 776.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
@@ -511,15 +511,15 @@ margin_right = 776.0
 margin_bottom = 72.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/YanContainer2"]
-margin_right = 60.0
+margin_right = 75.0
 margin_bottom = 14.0
-rect_min_size = Vector2( 60, 0 )
+rect_min_size = Vector2( 75, 0 )
 text = "y-ray flux"
 align = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/YanContainer2"]
-margin_left = 64.0
-margin_right = 664.0
+margin_left = 79.0
+margin_right = 679.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 600, 15 )
 custom_styles/fg = SubResource( 2 )
@@ -532,7 +532,7 @@ script = ExtResource( 15 )
 stat_name = "yan"
 
 [node name="tempyan" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/YanContainer2"]
-margin_left = 668.0
+margin_left = 683.0
 margin_right = 776.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
@@ -544,15 +544,15 @@ margin_right = 776.0
 margin_bottom = 91.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/DereContainer3"]
-margin_right = 69.0
+margin_right = 75.0
 margin_bottom = 14.0
-rect_min_size = Vector2( 60, 0 )
+rect_min_size = Vector2( 75, 0 )
 text = "d-radiation"
 align = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/DereContainer3"]
-margin_left = 73.0
-margin_right = 673.0
+margin_left = 79.0
+margin_right = 679.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 600, 15 )
 custom_styles/fg = SubResource( 2 )
@@ -565,7 +565,7 @@ script = ExtResource( 15 )
 stat_name = "dere"
 
 [node name="tempdere" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/DereContainer3"]
-margin_left = 677.0
+margin_left = 683.0
 margin_right = 776.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
@@ -577,15 +577,15 @@ margin_right = 776.0
 margin_bottom = 110.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/EnergyContainer4"]
-margin_right = 60.0
+margin_right = 75.0
 margin_bottom = 14.0
-rect_min_size = Vector2( 60, 0 )
+rect_min_size = Vector2( 75, 0 )
 text = "Energy"
 align = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/EnergyContainer4"]
-margin_left = 64.0
-margin_right = 664.0
+margin_left = 79.0
+margin_right = 679.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 600, 15 )
 custom_styles/fg = SubResource( 2 )
@@ -598,7 +598,7 @@ script = ExtResource( 15 )
 stat_name = "energy"
 
 [node name="tempnrg" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/EnergyContainer4"]
-margin_left = 668.0
+margin_left = 683.0
 margin_right = 776.0
 margin_bottom = 14.0
 size_flags_horizontal = 3

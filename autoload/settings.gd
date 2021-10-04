@@ -5,6 +5,11 @@ var volumeSound: float
 var Orchestrion
 var tutorial:bool = true
 
+func tutoring():
+    var tutor_load = load("res://dialoguebox.tscn") 
+    var tutor = tutor_load.instance()
+    get_viewport().add_child(tutor)
+
 func _ready():
     pause_mode = Node.PAUSE_MODE_PROCESS
     Orchestrion = AudioStreamPlayer.new()

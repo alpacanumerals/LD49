@@ -481,7 +481,7 @@ margin_bottom = 53.0
 margin_right = 75.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 75, 0 )
-text = "t-particles"
+text = "tsun flux"
 align = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/TsunContainer"]
@@ -514,7 +514,7 @@ margin_bottom = 72.0
 margin_right = 75.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 75, 0 )
-text = "y-ray flux"
+text = "yan flux"
 align = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/YanContainer2"]
@@ -547,7 +547,7 @@ margin_bottom = 91.0
 margin_right = 75.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 75, 0 )
-text = "d-radiation"
+text = "derediation"
 align = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/DereContainer3"]

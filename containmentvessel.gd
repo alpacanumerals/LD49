@@ -59,6 +59,7 @@ func judder():
         self.set_position(perturbed_position)
 
 func paradox():
+    $ParadoxNoise.volume_db = magic.criticality
     if magic.criticality > 1:
         if (!$ParadoxNoise.playing):
             $ParadoxNoise.play()

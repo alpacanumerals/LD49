@@ -24,6 +24,8 @@ var flare_interval: float = 90.0
 var energy: float = 0.0
 var total_energy: float = 0.0
 
+var light_energy: float = 0.0
+
 var criticality: int = 0
 
 var reactor_tick_size: float = 0.1
@@ -65,6 +67,7 @@ func _physics_process(delta):
             update_energy()
             update_shielding()
             summon_accelerator()
+            update_light()
         if energy > summon_threshold:
             auto_summon_timer += delta*summon_acceleration
         flare_timer(delta)
@@ -154,6 +157,9 @@ func summon_accelerator():
         summon_acceleration = 1.3
     else:
         criticality = 4
+
+func update_light():
+    light_energy = 2.0*(tsun+yan+dere)/shielding + 10.0*flare_value
 
 func flare_timer(delta):
     flare_countdown -= delta

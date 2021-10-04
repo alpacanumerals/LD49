@@ -53,6 +53,7 @@ func _physics_process(delta):
             update_power()
             update_energy()
             update_shielding()
+            summon_timer()
         auto_summon_timer += delta*summon_acceleration
 
 func update_dere_decay():

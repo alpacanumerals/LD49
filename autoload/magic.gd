@@ -1,5 +1,9 @@
 extends Node
 
+signal flare_incoming
+signal flare_active
+signal flare_over
+
 var gamestart
 
 var tsun:float = 0.0
@@ -12,8 +16,10 @@ var stability: float = 100.0
 var power: float = 0.0
 var shielding: float = 0.0
 
-var flare:bool = false
+var flare_state:int = 0
 var flare_value: float = 0.0
+var flare_countdown: float = 15.0
+const flare_interval: float = 15.0
 
 var energy: float = 0.0
 var total_energy: float = 0.0
@@ -60,6 +66,7 @@ func _physics_process(delta):
             summon_timer()
         if energy > summon_threshold:
             auto_summon_timer += delta*summon_acceleration
+        flare_timer(delta)
 
 func update_dere_decay():
     dere_buildup += dere
@@ -149,6 +156,21 @@ func summon_timer():
     else:
         criticality = 4
 
+func flare_timer(delta):
+    flare_countdown -= delta
+    if (flare_countdown < 10 && flare_state == 0):
+        flare_state = 1
+        emit_signal("flare_incoming")
+    if (flare_countdown < 5 && flare_state <= 1):
+        flare_state = 2
+        flare_value = 1.2
+        emit_signal("flare_active")
+    if (flare_countdown <0):
+        flare_countdown = flare_interval
+        flare_state = 0
+        flare_value = 1.0
+        emit_signal("flare_over")
+
 func reset_energy():
     total_energy += energy
     energy = 0.0
@@ -171,3 +193,8 @@ func check_auto_summon():
         return true
     else:
         return false
+
+func _on_motes_prepared(node):
+    connect("flare_incoming", node, "incoming_flare")
+    connect("flare_active", node, "activate_flare")
+    connect("flare_over", node, "end_flare")

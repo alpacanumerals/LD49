@@ -89,7 +89,6 @@ func witch_carding():
     get_viewport().add_child(witch_card)
 
 func witch_summon(energy):
-    var min_energy = 10*witch_array.size()*witch_array.size()
     var bad_end = energy < min_energy
     magic.bad_end = bad_end
     
@@ -133,4 +132,5 @@ func witch_display_summon():
     get_viewport().add_child(summoning)
 
 func set_minimum_energy():
-    min_energy = 10*witch_array.size()*witch_array.size()
+    var n = witch_array.size()
+    min_energy = 1000*sqrt(n*n*n*n*n)

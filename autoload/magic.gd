@@ -29,7 +29,7 @@ var criticality: int = 0
 var reactor_tick_size: float = 0.1
 var reactor_tick_counter: float = 0.0
 
-var auto_summon_rate: int = 30
+var auto_summon_rate: int = 60
 var auto_summon_timer: float = 0.0
 var summon_acceleration: float = 1.0
 var bad_end: bool = false
@@ -164,12 +164,12 @@ func flare_timer(delta):
         emit_signal("flare_incoming")
     if (flare_countdown < 5 && flare_state <= 1):
         flare_state = 2
-        flare_value = 1.2
+        flare_value = 0.2
         emit_signal("flare_active")
     if (flare_countdown <0):
         flare_countdown = float(30 + randi()%60)
         flare_state = 0
-        flare_value = 1.0
+        flare_value = 0.0
         emit_signal("flare_over")
 
 func reset_energy():

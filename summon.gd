@@ -14,6 +14,7 @@ func _ready():
     pause_mode = Node.PAUSE_MODE_PROCESS
     get_tree().paused = true
     if magic.bad_end:
+        settings.Orchestrion.stop()
         var deep_one = randi()%3
         $Rise.play()
         yield(get_tree().create_timer(1), "timeout")
@@ -74,6 +75,7 @@ func _ready():
             2:
                 get_node("Card/MarginContainer/VBoxContainer/WaifuPic").texture = deep2
     else:
+        settings.Orchestrion.volume_db = -16
         get_node("Card/MarginContainer/VBoxContainer/WaifuPic").texture = sil1
         $Blip.play()
         yield(get_tree().create_timer(0.5), "timeout")
@@ -113,14 +115,17 @@ func _ready():
             $Jingle2.play()
         else:
             $Jingle3.play()
-        yield(get_tree().create_timer(0.75), "timeout")
+        yield(get_tree().create_timer(1.25), "timeout")
+        get_node("Card/MarginContainer/VBoxContainer/MarginContainer/FlavourText").text = "click to continue..."
         progress = true
         
 func _input(event):
     if event is InputEventMouseButton and progress == true:
         if event.button_index == BUTTON_LEFT and event.pressed:
+            settings.Orchestrion.volume_db = 0
             switcher.playClick()
             get_tree().paused = false
             if (witches.witch_array.size() >= 13):
+                settings.Orchestrion.stop()
                 switcher.switchScene("res://victoryscreen.tscn")
             queue_free()

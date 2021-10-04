@@ -17,6 +17,8 @@ var total_stars: int = 4
 
 var min_energy = 90
 
+const max_witch = 13
+
 #name, stars, facefile, ATK, DEF, ability index (0 for now)
 #index 0, 1, 2 always Gertrude, Manako and Yuli
 

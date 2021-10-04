@@ -20,18 +20,20 @@ func _ready():
 
 func initialise(witch_index):
     var summoner = get_parent().get_parent().get_parent().get_node("SummonButton")
-    summoner.connect("doing_summon", self, "_on_summon_interrupt")
+    if summoner != null:
+        summoner.connect("doing_summon", self, "_on_summon_interrupt")
     
     witch_id = witch_index
-    var fetched_witch = witches.witch_array[witch_index]
-    var face
-    if witch_index < 3:
-        face = load("res://assets_faces/"+fetched_witch[2]+".png")
-    else:
-        face = load(witches.witch_array[witch_index][2])
-    $Button.icon = face
-    $Button.text = fetched_witch[0]
-    $WitchStars.texture = load("res://assets/star"+str(fetched_witch[1])+".png")
+    if witch_index < witches.witch_array.size():
+        var fetched_witch = witches.witch_array[witch_index]
+        var face
+        if witch_index < 3:
+            face = load("res://assets_faces/"+fetched_witch[2]+".png")
+        else:
+            face = load(witches.witch_array[witch_index][2])
+        $Button.icon = face
+        $Button.text = fetched_witch[0]
+        $WitchStars.texture = load("res://assets/star"+str(fetched_witch[1])+".png")
         
 func _process(_delta):
     if dragging:

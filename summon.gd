@@ -135,7 +135,7 @@ func _input(event):
             if magic.bad_end:
                 settings.Orchestrion.stop()
                 switcher.switchScene("res://failurescreen.tscn")
-            if witches.witch_array.size() >= 13:
+            if witches.witch_array.size() >= witches.max_witch:
                 settings.Orchestrion.stop()
                 switcher.switchScene("res://victoryscreen.tscn")
             queue_free()

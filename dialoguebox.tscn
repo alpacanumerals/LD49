@@ -1,82 +1,96 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://dialoguebox.gd" type="Script" id=1]
-[ext_resource path="res://assets_faces/yuli.png" type="Texture" id=2]
+[ext_resource path="res://assets_faces/smug.jpeg" type="Texture" id=2]
 [ext_resource path="res://fonts/OpenSans-name.tres" type="DynamicFont" id=3]
 
-[node name="Dialogue" type="Control"]
-anchor_top = 1.0
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="DialogueBox" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -200.0
-margin_bottom = -200.0
-size_flags_horizontal = 8
-size_flags_vertical = 8
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="."]
-anchor_top = 1.0
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueBox"]
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="Control" type="Control" parent="DialogueBox/VBoxContainer"]
+margin_right = 1280.0
+margin_bottom = 460.0
+rect_min_size = Vector2( 0, 460 )
+
+[node name="Control2" type="Control" parent="DialogueBox/VBoxContainer"]
+margin_top = 464.0
+margin_right = 1280.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="DialogueBox/VBoxContainer/Control2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = 200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DialogueBox/VBoxContainer/Control2"]
+margin_right = 1280.0
+margin_bottom = 260.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 1.0
-margin_bottom = 1.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Control" type="Control" parent="DialogueBox/VBoxContainer/Control2/HBoxContainer"]
+margin_right = 260.0
+margin_bottom = 260.0
+rect_min_size = Vector2( 260, 260 )
 
-[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer"]
-margin_right = 192.0
-margin_bottom = 197.0
+[node name="Sprite" type="Sprite" parent="DialogueBox/VBoxContainer/Control2/HBoxContainer/Control"]
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
+centered = false
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel/HBoxContainer"]
-margin_left = 196.0
-margin_right = 1277.0
-margin_bottom = 197.0
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueBox/VBoxContainer/Control2/HBoxContainer"]
+margin_left = 264.0
+margin_right = 1280.0
+margin_bottom = 260.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 10
-custom_constants/margin_top = 4
-custom_constants/margin_left = 4
-custom_constants/margin_bottom = 10
+
+[node name="Name" type="Label" parent="DialogueBox/VBoxContainer/Control2/HBoxContainer/VBoxContainer"]
+margin_right = 1016.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+custom_fonts/font = ExtResource( 3 )
+text = "Marie"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer/MarginContainer"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 1071.0
-margin_bottom = 187.0
-
-[node name="Name" type="Label" parent="Panel/HBoxContainer/MarginContainer/VBoxContainer"]
-margin_right = 1067.0
-margin_bottom = 34.0
-rect_min_size = Vector2( 0, 32 )
-custom_fonts/font = ExtResource( 3 )
-text = "Yuli"
-
-[node name="Label" type="Label" parent="Panel/HBoxContainer/MarginContainer/VBoxContainer"]
-margin_top = 38.0
-margin_right = 1067.0
-margin_bottom = 183.0
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueBox/VBoxContainer/Control2/HBoxContainer/VBoxContainer"]
+margin_top = 44.0
+margin_right = 1016.0
+margin_bottom = 260.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Godot containers are the fucking worst, you know."
+bbcode_enabled = true
+bbcode_text = "Good evening and welcome to the Witch Attunement via Interdimen-- Err... That is, welcome to the Witch Reactor.
+
+The purpose of this sophisticated magitechnical installation, which totally isn't just a box I've suspended over a yawning arcane maw by a dubious cable, is to summon more witches using the magical power emanating from the rift. There's three of you in there now. Let's say you summon ten others and we'll call that mission success. (That is, I'll let you out.) Where does the rift come from? Er...don't worry about that.
+
+Anyway, use the buttons to raise or lower the reactor. The deeper into the maw you go, the greater the flux of t-particles and y-rays. Click and drag to position your coven members on the magic circle either on the inner or outer rings to channel power from the rift, or on the ring itself to maintain reactor stability. The latter will produce d-radiation as a side effect which can be good or bad -- you'll have to figure out how to manage it or just let it decay back into t-particles over time.
+
+You'll want to try to keep the flux under control relative to your shielding or you might, you know, explode, or summon something that is close to but not *quite* a witch if you take my meaning. Anyhow, good luck!"
+text = "Good evening and welcome to the Witch Attunement via Interdimen-- Err... That is, welcome to the Witch Reactor.
+
+The purpose of this sophisticated magitechnical installation, which totally isn't just a box I've suspended over a yawning arcane maw by a dubious cable, is to summon more witches using the magical power emanating from the rift. There's three of you in there now. Let's say you summon ten others and we'll call that mission success. (That is, I'll let you out.) Where does the rift come from? Er...don't worry about that.
+
+Anyway, use the buttons to raise or lower the reactor. The deeper into the maw you go, the greater the flux of t-particles and y-rays. Click and drag to position your coven members on the magic circle either on the inner or outer rings to channel power from the rift, or on the ring itself to maintain reactor stability. The latter will produce d-radiation as a side effect which can be good or bad -- you'll have to figure out how to manage it or just let it decay back into t-particles over time.
+
+You'll want to try to keep the flux under control relative to your shielding or you might, you know, explode, or summon something that is close to but not *quite* a witch if you take my meaning. Anyhow, good luck!"

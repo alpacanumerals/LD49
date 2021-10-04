@@ -20,7 +20,8 @@ func _ready():
         get_node("Card/MarginContainer/VBoxContainer/WaifuPic").texture = load("res://assets_faces/"+fetched_witch[2]+".png")
     get_node("Card/MarginContainer/VBoxContainer/HBoxContainer/AtkValue").text = String(fetched_witch[3])
     get_node("Card/MarginContainer/VBoxContainer/HBoxContainer/DefValue").text = String(fetched_witch[4])
-    yield(get_tree().create_timer(1), "timeout")
+    yield(get_tree().create_timer(1.5), "timeout")
+    get_node("Card/MarginContainer/VBoxContainer/MarginContainer/FlavourText").text = "click to continue..."
     progress = true
     pass # Replace with function body.
     

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://assets/shaft.png" type="Texture" id=1]
 [ext_resource path="res://assets/pod.png" type="Texture" id=2]
@@ -6,18 +6,36 @@
 [ext_resource path="res://containmentvessel.gd" type="Script" id=4]
 [ext_resource path="res://assets/circle.png" type="Texture" id=5]
 [ext_resource path="res://magic_circle_slot.gd" type="Script" id=6]
-[ext_resource path="res://stat_label.gd" type="Script" id=7]
+[ext_resource path="res://counter.gd" type="Script" id=7]
 [ext_resource path="res://witch_list_zone.gd" type="Script" id=8]
 [ext_resource path="res://assets/cablecar.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/metalmoans04.wav" type="AudioStream" id=10]
 [ext_resource path="res://elevatorshaft.gd" type="Script" id=11]
 [ext_resource path="res://witch_list.gd" type="Script" id=12]
 [ext_resource path="res://summon_button.gd" type="Script" id=13]
+[ext_resource path="res://summon_countdown.gd" type="Script" id=14]
+[ext_resource path="res://stat_bar.gd" type="Script" id=15]
+[ext_resource path="res://tempnrg.gd" type="Script" id=16]
+[ext_resource path="res://tempshield.gd" type="Script" id=17]
+[ext_resource path="res://tempstab.gd" type="Script" id=18]
+[ext_resource path="res://tempyan.gd" type="Script" id=19]
+[ext_resource path="res://tempdere.gd" type="Script" id=20]
+[ext_resource path="res://temppower.gd" type="Script" id=21]
+[ext_resource path="res://temptsun.gd" type="Script" id=22]
+[ext_resource path="res://assets/badsplash.png" type="Texture" id=23]
+[ext_resource path="res://assets/paradox.wav" type="AudioStream" id=24]
+[ext_resource path="res://motes.gd" type="Script" id=25]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 46.7068
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.980392, 0.00784314, 0.00784314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.317647, 0, 0, 1 )
+
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 104.093, 338.725 )
 
 [node name="ColorRect" type="ColorRect"]
@@ -68,9 +86,31 @@ texture = ExtResource( 2 )
 
 [node name="CableSounds" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel"]
 stream = ExtResource( 9 )
+volume_db = -24.0
 
 [node name="MetalMoan" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel"]
 stream = ExtResource( 10 )
+volume_db = -18.0
+
+[node name="ParadoxNoise" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel"]
+stream = ExtResource( 24 )
+
+[node name="Motes" type="CPUParticles2D" parent="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance"]
+position = Vector2( 60, 1000 )
+scale = Vector2( 2, 2 )
+amount = 300
+lifetime = 2.67
+preprocess = 60.0
+speed_scale = 0.25
+randomness = 0.38
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector2( 0, -98 )
+initial_velocity_random = 1.0
+radial_accel = 25.0
+color = Color( 1, 0, 0.607843, 1 )
+hue_variation = 0.05
+script = ExtResource( 25 )
 
 [node name="Elevator" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 124.0
@@ -132,75 +172,225 @@ margin_right = 568.0
 margin_bottom = 420.0
 texture = ExtResource( 5 )
 
-[node name="MagicCircleSlot" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
-position = Vector2( 177.395, 176.671 )
+[node name="CircleSlot" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 180, 180 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/MagicCircleSlot"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot"]
 position = Vector2( 0.668335, -0.668304 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/MagicCircleSlot"]
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot"]
 position = Vector2( 0.0823975, -0.649916 )
 scale = Vector2( 0.264868, 0.272951 )
 texture = ExtResource( 5 )
 
-[node name="MagicCircleSlot2" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
-position = Vector2( 92.2741, 254.152 )
+[node name="CircleSlot1" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 180, 0 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
 slot_number = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/MagicCircleSlot2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot1"]
 position = Vector2( 0.668335, -0.668304 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/MagicCircleSlot2"]
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot1"]
 position = Vector2( 0.0823975, -0.649916 )
 scale = Vector2( 0.264868, 0.272951 )
 texture = ExtResource( 5 )
 
-[node name="MagicCircleSlot3" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
-position = Vector2( 54.1388, 61.1869 )
+[node name="CircleSlot2" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 360, 180 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
 slot_number = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/MagicCircleSlot3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot2"]
 position = Vector2( 0.668335, -0.668304 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/MagicCircleSlot3"]
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot2"]
 position = Vector2( 0.0823975, -0.649916 )
 scale = Vector2( 0.264868, 0.272951 )
 texture = ExtResource( 5 )
 
-[node name="MagicCircleSlot4" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
-position = Vector2( 406.325, 177.003 )
+[node name="CircleSlot3" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 180, 360 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
 slot_number = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/MagicCircleSlot4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot3"]
 position = Vector2( 0.668335, -0.668304 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/MagicCircleSlot4"]
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot3"]
 position = Vector2( 0.0823975, -0.649916 )
 scale = Vector2( 0.264868, 0.272951 )
 texture = ExtResource( 5 )
 
-[node name="MagicCircle" type="Node2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
-position = Vector2( 217.537, 254.451 )
+[node name="CircleSlot4" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 0, 180 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+slot_number = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot4"]
+position = Vector2( 0.668335, -0.668304 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot4"]
+position = Vector2( 0.0823975, -0.649916 )
+scale = Vector2( 0.264868, 0.272951 )
+texture = ExtResource( 5 )
+
+[node name="CircleSlot5" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 20, 20 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+slot_number = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot5"]
+position = Vector2( 0.668335, -0.668304 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot5"]
+position = Vector2( 0.0823975, -0.649916 )
+scale = Vector2( 0.264868, 0.272951 )
+texture = ExtResource( 5 )
+
+[node name="CircleSlot6" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 340, 20 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+slot_number = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot6"]
+position = Vector2( 0.668335, -0.668304 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot6"]
+position = Vector2( 0.0823975, -0.649916 )
+scale = Vector2( 0.264868, 0.272951 )
+texture = ExtResource( 5 )
+
+[node name="CircleSlot7" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 340, 340 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+slot_number = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot7"]
+position = Vector2( 0.668335, -0.668304 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot7"]
+position = Vector2( 0.0823975, -0.649916 )
+scale = Vector2( 0.264868, 0.272951 )
+texture = ExtResource( 5 )
+
+[node name="CircleSlot8" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 20, 340 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+slot_number = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot8"]
+position = Vector2( 0.668335, -0.668304 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot8"]
+position = Vector2( 0.0823975, -0.649916 )
+scale = Vector2( 0.264868, 0.272951 )
+texture = ExtResource( 5 )
+
+[node name="CircleSlot9" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 103, 103 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+slot_number = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot9"]
+position = Vector2( 0.668335, -0.668304 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot9"]
+position = Vector2( 0.0823975, -0.649916 )
+scale = Vector2( 0.264868, 0.272951 )
+texture = ExtResource( 5 )
+
+[node name="CircleSlot10" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 257, 103 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+slot_number = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot10"]
+position = Vector2( 0.668335, -0.668304 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot10"]
+position = Vector2( 0.0823975, -0.649916 )
+scale = Vector2( 0.264868, 0.272951 )
+texture = ExtResource( 5 )
+
+[node name="CircleSlot11" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 257, 257 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+slot_number = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot11"]
+position = Vector2( 0.668335, -0.668304 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot11"]
+position = Vector2( 0.0823975, -0.649916 )
+scale = Vector2( 0.264868, 0.272951 )
+texture = ExtResource( 5 )
+
+[node name="CircleSlot12" type="Area2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite"]
+position = Vector2( 103, 257 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+slot_number = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot12"]
+position = Vector2( 0.668335, -0.668304 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/MagicCircleArea/CircleSprite/CircleSlot12"]
+position = Vector2( 0.0823975, -0.649916 )
+scale = Vector2( 0.264868, 0.272951 )
+texture = ExtResource( 5 )
 
 [node name="LowerControlArea" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer"]
 margin_top = 484.0
@@ -212,67 +402,256 @@ size_flags_vertical = 3
 margin_right = 776.0
 margin_bottom = 216.0
 
-[node name="ShieldLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+[node name="ShieldContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+margin_right = 776.0
+margin_bottom = 15.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/ShieldContainer2"]
+margin_right = 60.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 60, 0 )
+text = "Shield"
+align = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/ShieldContainer2"]
+margin_left = 64.0
+margin_right = 664.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 600, 15 )
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+max_value = 1000.0
+percent_visible = false
+script = ExtResource( 15 )
+stat_name = "shielding"
+
+[node name="tempshield" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/ShieldContainer2"]
+margin_left = 668.0
 margin_right = 776.0
 margin_bottom = 14.0
-text = "Power: 100"
-script = ExtResource( 7 )
-stat_name = "shielding"
-stat_label = "Shielding"
+size_flags_horizontal = 3
+script = ExtResource( 17 )
 
-[node name="PowerLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
-margin_top = 18.0
+[node name="PowerContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+margin_top = 19.0
 margin_right = 776.0
-margin_bottom = 32.0
-text = "Power: 100"
-script = ExtResource( 7 )
+margin_bottom = 34.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/PowerContainer3"]
+margin_right = 60.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 60, 0 )
+text = "Power"
+align = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/PowerContainer3"]
+margin_left = 64.0
+margin_right = 664.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 600, 15 )
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+max_value = 1000.0
+percent_visible = false
+script = ExtResource( 15 )
 stat_name = "power"
-stat_label = "Power"
 
-[node name="StabLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
-margin_top = 36.0
+[node name="temppower" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/PowerContainer3"]
+margin_left = 668.0
 margin_right = 776.0
-margin_bottom = 50.0
-text = "Power: 100"
-script = ExtResource( 7 )
+margin_bottom = 14.0
+size_flags_horizontal = 3
+script = ExtResource( 21 )
+
+[node name="StabilityLabel" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+margin_top = 38.0
+margin_right = 776.0
+margin_bottom = 53.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/StabilityLabel"]
+margin_right = 60.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 60, 0 )
+text = "Stability"
+align = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/StabilityLabel"]
+margin_left = 64.0
+margin_right = 664.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 600, 15 )
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+max_value = 1000.0
+percent_visible = false
+script = ExtResource( 15 )
 stat_name = "stability"
-stat_label = "Stability"
 
-[node name="TsunLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
-margin_top = 54.0
+[node name="tempstab" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/StabilityLabel"]
+margin_left = 668.0
 margin_right = 776.0
-margin_bottom = 68.0
-text = "Power: 100"
-script = ExtResource( 7 )
+margin_bottom = 14.0
+size_flags_horizontal = 3
+script = ExtResource( 18 )
+
+[node name="TsunContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+margin_top = 57.0
+margin_right = 776.0
+margin_bottom = 72.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/TsunContainer"]
+margin_right = 65.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 60, 0 )
+text = "t-particles"
+align = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/TsunContainer"]
+margin_left = 69.0
+margin_right = 669.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 600, 15 )
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+max_value = 1000.0
+percent_visible = false
+script = ExtResource( 15 )
 stat_name = "tsun"
-stat_label = "Tsun"
 
-[node name="YanLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
-margin_top = 72.0
+[node name="temptsun" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/TsunContainer"]
+margin_left = 673.0
 margin_right = 776.0
-margin_bottom = 86.0
-text = "Power: 100"
-script = ExtResource( 7 )
+margin_bottom = 14.0
+size_flags_horizontal = 3
+script = ExtResource( 22 )
+
+[node name="YanContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+margin_top = 76.0
+margin_right = 776.0
+margin_bottom = 91.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/YanContainer2"]
+margin_right = 60.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 60, 0 )
+text = "y-ray flux"
+align = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/YanContainer2"]
+margin_left = 64.0
+margin_right = 664.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 600, 15 )
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+max_value = 1000.0
+percent_visible = false
+script = ExtResource( 15 )
 stat_name = "yan"
-stat_label = "Yan"
 
-[node name="DereLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
-margin_top = 90.0
+[node name="tempyan" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/YanContainer2"]
+margin_left = 668.0
 margin_right = 776.0
-margin_bottom = 104.0
-text = "Power: 100"
-script = ExtResource( 7 )
+margin_bottom = 14.0
+size_flags_horizontal = 3
+script = ExtResource( 19 )
+
+[node name="DereContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+margin_top = 95.0
+margin_right = 776.0
+margin_bottom = 110.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/DereContainer3"]
+margin_right = 69.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 60, 0 )
+text = "d-radiation"
+align = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/DereContainer3"]
+margin_left = 73.0
+margin_right = 673.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 600, 15 )
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+max_value = 1000.0
+percent_visible = false
+script = ExtResource( 15 )
 stat_name = "dere"
-stat_label = "Dere"
 
-[node name="EnergyLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
-margin_top = 108.0
+[node name="tempdere" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/DereContainer3"]
+margin_left = 677.0
 margin_right = 776.0
-margin_bottom = 122.0
-text = "Power: 100"
-script = ExtResource( 7 )
+margin_bottom = 14.0
+size_flags_horizontal = 3
+script = ExtResource( 20 )
+
+[node name="EnergyContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+margin_top = 114.0
+margin_right = 776.0
+margin_bottom = 129.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/EnergyContainer4"]
+margin_right = 60.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 60, 0 )
+text = "Energy"
+align = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/EnergyContainer4"]
+margin_left = 64.0
+margin_right = 664.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 600, 15 )
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+max_value = 1e+06
+percent_visible = false
+script = ExtResource( 15 )
 stat_name = "energy"
-stat_label = "Energy"
+
+[node name="tempnrg" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/EnergyContainer4"]
+margin_left = 668.0
+margin_right = 776.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+script = ExtResource( 16 )
+
+[node name="SummonCountdown" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+margin_top = 133.0
+margin_right = 776.0
+margin_bottom = 147.0
+script = ExtResource( 14 )
+
+[node name="Counter" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+margin_top = 151.0
+margin_right = 776.0
+margin_bottom = 165.0
+script = ExtResource( 7 )
 
 [node name="ListPanel" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 992.0
@@ -307,7 +686,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/Panel/WitchList/Area2D"]
 visible = false
 position = Vector2( 104.708, 333.153 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="SummonButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/ListPanel"]
 margin_top = 680.0
@@ -321,6 +700,13 @@ margin_top = 704.0
 margin_right = 1200.0
 margin_bottom = 704.0
 size_flags_vertical = 3
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 640, 360 )
+enabled = false
+texture = ExtResource( 23 )
+color = Color( 1, 0, 0.137255, 1 )
+energy = 2.8
 
 [connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingUp" to="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel" method="_on_GoingUp_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingUp" to="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft" method="_on_GoingUp_toggled"]

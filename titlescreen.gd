@@ -11,33 +11,13 @@ func _on_NewGameButton_button_down():
     switcher.playClick()
     
 func _on_NewGameButton_pressed():
-#    var ptest_instance = load("res://p_test.tscn") #Movement Test
-#    var ptest = ptest_instance.instance()
-#    add_child(ptest)
-#    util.dialogue()
     witches.init_witches()
     switcher.switchScene("res://reactor.tscn")
-    
-func _on_OptionsButton_button_down():
+
+func _on_CheckButton_toggled(button_pressed):
     switcher.playClick()
-    
-func _on_OptionsButton_pressed():
-    switcher.switchScene("res://optionscreen.tscn")
-
-func _on_QuitButton_button_down():
-    switcher.playClick()
-    
-func _on_QuitButton_pressed():
-    switcher.switchQuit()
-
-
-
-
-
-
-
-
-
-
-
-
+    if button_pressed:
+        settings.tutorial = true
+    else:
+        settings.tutorial = false
+    pass # Replace with function body.

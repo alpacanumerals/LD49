@@ -1,11 +1,13 @@
 extends Node
 
 var file_dict
+var randgen = RandomNumberGenerator.new()
 
 func _ready():
     pause_mode = Node.PAUSE_MODE_PROCESS
     randomize()
-    loadJSONs()
+    randgen.randomize()
+    #loadJSONs()
 
 func loadJSONs():
     var file = File.new()

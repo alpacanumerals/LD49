@@ -19,7 +19,8 @@ func _draw():
 func _ready():
     depth = global_position.y
     base_position = position
-
+    look_at(anchor)
+    
 func _process(delta):
     set_position(base_position)
     look_at(anchor) #This points the containment vessel to a point near the top.

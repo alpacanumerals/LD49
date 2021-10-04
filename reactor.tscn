@@ -89,6 +89,22 @@ volume_db = -24.0
 stream = ExtResource( 10 )
 volume_db = -18.0
 
+[node name="Motes" type="CPUParticles2D" parent="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance"]
+position = Vector2( 60, 1000 )
+scale = Vector2( 2, 2 )
+amount = 120
+lifetime = 2.67
+preprocess = 60.0
+speed_scale = 0.25
+randomness = 0.38
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector2( 0, -98 )
+initial_velocity_random = 1.0
+radial_accel = 25.0
+color = Color( 1, 0, 0.607843, 1 )
+hue_variation = 0.05
+
 [node name="Elevator" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 124.0
 margin_right = 208.0

@@ -433,6 +433,8 @@ __meta__ = {
 margin_right = 75.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 75, 0 )
+hint_tooltip = "Shielding protects the reactor. Or rather, it protects you against magical radiation. Try not to have too little of it!"
+mouse_filter = 1
 text = "Shield"
 align = 2
 
@@ -469,6 +471,7 @@ __meta__ = {
 margin_right = 75.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 75, 0 )
+mouse_filter = 1
 text = "Power"
 align = 2
 
@@ -502,6 +505,7 @@ margin_bottom = 53.0
 margin_right = 75.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 75, 0 )
+mouse_filter = 1
 text = "tsun flux"
 align = 2
 
@@ -535,6 +539,7 @@ margin_bottom = 72.0
 margin_right = 75.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 75, 0 )
+mouse_filter = 1
 text = "yan flux"
 align = 2
 
@@ -568,6 +573,7 @@ margin_bottom = 91.0
 margin_right = 75.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 75, 0 )
+mouse_filter = 1
 text = "derediation"
 align = 2
 
@@ -601,6 +607,7 @@ margin_bottom = 110.0
 margin_right = 75.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 75, 0 )
+mouse_filter = 1
 text = "Energy"
 align = 2
 
@@ -704,10 +711,10 @@ energy = 2.8
 script = ExtResource( 18 )
 
 [connection signal="flare_warning" from="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/Motes" to="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/FlareWarning" method="_on_Motes_flare_warning"]
-[connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingUp" to="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft" method="_on_GoingUp_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingUp" to="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel" method="_on_GoingUp_toggled"]
-[connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingDown" to="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft" method="_on_GoingDown_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingUp" to="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft" method="_on_GoingUp_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingDown" to="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel" method="_on_GoingDown_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingDown" to="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft" method="_on_GoingDown_toggled"]
 [connection signal="add_witch" from="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" to="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/EnergyContainer4/ProgressBar" method="_on_SummonButton_add_witch"]
 [connection signal="add_witch" from="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" to="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/EnergyCost" method="_on_SummonButton_add_witch"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" to="MarginContainer/VBoxContainer/HBoxContainer/ListPanel/SummonButton" method="_on_SummonButton_button_down"]

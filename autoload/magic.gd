@@ -21,7 +21,7 @@ var total_energy: float = 0.0
 var reactor_tick_size: float = 0.1
 var reactor_tick_counter: float = 0.0
 
-var auto_summon_rate: int = 60
+var auto_summon_rate: int = 30
 var auto_summon_timer: float = 0.0
 var summon_acceleration: float = 1.0
 var bad_end: bool = false
@@ -108,7 +108,7 @@ func update_yflux():
     yan = clamp((fluct*depth*depth*depth*mod*(1.0+flare_value)/(350*350))-poison,0,20000.0)
 
 func update_dflux():
-    var d_factor = sqrt(slots[1][0]+slots[2][0]+slots[3][0]+slots[4][0]+slots[1][1]+slots[2][1]+slots[3][1]+slots[4][1])/100
+    var d_factor = sqrt(slots[1][0]+slots[2][0]+slots[3][0]+slots[4][0])/100
     var osc = 0.02
     var fluct = 1.0
 #    fluct = 1.0+util.randgen.randf_range(-osc,osc)
@@ -125,7 +125,7 @@ func update_energy():
     
 func update_shielding():
     var def = 0.0
-    for i in range(13):
+    for i in range(5):
         def += slots[i][1]
     shielding = 200 + def/10
         

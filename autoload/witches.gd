@@ -90,6 +90,7 @@ func witch_summon(energy):
     
     summon_name = util.randomFrom(witch_names)
     
+    energy = 0 #testing!
     var thresholds = [
         5 + energy/100,
         25 + energy/80,

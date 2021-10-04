@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://assets/shaft.png" type="Texture" id=1]
 [ext_resource path="res://assets/pod.png" type="Texture" id=2]
@@ -25,6 +25,8 @@
 [ext_resource path="res://assets/badsplash.png" type="Texture" id=23]
 [ext_resource path="res://assets/paradox.wav" type="AudioStream" id=24]
 [ext_resource path="res://motes.gd" type="Script" id=25]
+[ext_resource path="res://flare_warning.gd" type="Script" id=26]
+[ext_resource path="res://fonts/OpenSans-ATK.tres" type="DynamicFont" id=27]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 46.7068
@@ -635,6 +637,17 @@ margin_right = 776.0
 margin_bottom = 146.0
 script = ExtResource( 7 )
 
+[node name="FlareWarning" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer"]
+visible = false
+margin_top = 150.0
+margin_right = 776.0
+margin_bottom = 195.0
+custom_fonts/font = ExtResource( 27 )
+text = "Warning -  Flare Imminent - Take shelter"
+align = 1
+uppercase = true
+script = ExtResource( 26 )
+
 [node name="ListPanel" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 992.0
 margin_right = 1200.0
@@ -690,6 +703,7 @@ color = Color( 1, 0, 0.137255, 1 )
 energy = 2.8
 script = ExtResource( 18 )
 
+[connection signal="flare_warning" from="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/Motes" to="MarginContainer/VBoxContainer/HBoxContainer/MainScreen/VBoxContainer/LowerControlArea/VBoxContainer/FlareWarning" method="_on_Motes_flare_warning"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingUp" to="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft" method="_on_GoingUp_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingUp" to="MarginContainer/VBoxContainer/HBoxContainer/VerticalDistance/ContainmentVessel" method="_on_GoingUp_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft/GoingDown" to="MarginContainer/VBoxContainer/HBoxContainer/Elevator/ElevatorShaft" method="_on_GoingDown_toggled"]

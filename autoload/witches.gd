@@ -101,8 +101,6 @@ func witch_summon(energy):
         50 + energy/60,
         75 + energy/40]
     
-    print(thresholds)
-    
     var roll = util.d100()
     if roll <= thresholds[0]:
         summon_stars = 5

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://fonts/OpenSans-name.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/badsplash.png" type="Texture" id=1]
 [ext_resource path="res://titlescreen.gd" type="Script" id=2]
+[ext_resource path="res://fonts/OpenSans-title.tres" type="DynamicFont" id=3]
 
 [node name="titlescreen" type="MarginContainer"]
 anchor_right = 1.0
@@ -25,12 +26,12 @@ margin_right = 1180.0
 margin_bottom = 700.0
 mouse_filter = 2
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Title" type="Label" parent="VBoxContainer"]
 margin_right = 1080.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 0, 120 )
-custom_fonts/font = ExtResource( 1 )
-text = "Witch Activator"
+custom_fonts/font = ExtResource( 3 )
+text = "The Witch Reactor"
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
@@ -84,6 +85,11 @@ margin_right = 240.0
 margin_bottom = 556.0
 mouse_filter = 2
 size_flags_vertical = 3
+
+[node name="Sprite" type="Sprite" parent="."]
+z_index = -1
+texture = ExtResource( 1 )
+centered = false
 
 [connection signal="button_down" from="VBoxContainer/HBoxContainer/VBoxContainer/NewGameButton" to="." method="_on_NewGameButton_button_down"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/NewGameButton" to="." method="_on_NewGameButton_pressed"]

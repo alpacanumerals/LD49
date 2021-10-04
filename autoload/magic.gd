@@ -18,8 +18,8 @@ var shielding: float = 0.0
 
 var flare_state:int = 0
 var flare_value: float = 0.0
-var flare_countdown: float = 15.0
-const flare_interval: float = 15.0
+var flare_countdown: float = 60.0
+var flare_interval: float = 60.0
 
 var energy: float = 0.0
 var total_energy: float = 0.0
@@ -34,7 +34,7 @@ var auto_summon_timer: float = 0.0
 var summon_acceleration: float = 1.0
 var bad_end: bool = false
 
-const summon_threshold = 250
+const summon_threshold = -1
 
 var depth: float = 0
 
@@ -50,6 +50,7 @@ var slots = []
 func _ready():
     for _i in range(13):
         slots.append(null_stats.duplicate())
+    flare_countdown = flare_interval
 
 func _physics_process(delta):
     if gamestart:
@@ -63,7 +64,7 @@ func _physics_process(delta):
             update_power()
             update_energy()
             update_shielding()
-            summon_timer()
+            summon_accelerator()
         if energy > summon_threshold:
             auto_summon_timer += delta*summon_acceleration
         flare_timer(delta)
@@ -138,12 +139,12 @@ func update_shielding():
         def += slots[i][1]
     shielding = 200 + def/4
         
-func summon_timer():
+func summon_accelerator():
     var radiation = tsun+yan+dere
     var reactor_heat = radiation - shielding
     if radiation < shielding * 0.2:
         criticality = 0
-        summon_acceleration = 0
+        summon_acceleration = 0.9
     if radiation < shielding * 0.5:
         criticality = 1
         summon_acceleration = 0.95
@@ -166,7 +167,7 @@ func flare_timer(delta):
         flare_value = 1.2
         emit_signal("flare_active")
     if (flare_countdown <0):
-        flare_countdown = flare_interval
+        flare_countdown = float(30 + randi()%60)
         flare_state = 0
         flare_value = 1.0
         emit_signal("flare_over")

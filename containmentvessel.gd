@@ -69,7 +69,8 @@ func explode():
     if magic.criticality > 3:
         if !settings.Explosion.playing:
             settings.Explosion.play()
-            yield(get_tree().create_timer(1), "timeout")
+            $Explosion.restart()
+            yield(get_tree().create_timer(2), "timeout")
             switcher.switchScene("res://failurescreen.tscn")
 
 func _on_GoingDown_toggled(button_pressed):

@@ -55,7 +55,7 @@ script = ExtResource( 2 )
 
 [node name="RetryButton" type="Button" parent="MarginContainer/VBoxContainer"]
 margin_top = 54.0
-margin_right = 200.0
+margin_right = 678.0
 margin_bottom = 74.0
 text = "Return to Title"
 script = ExtResource( 4 )

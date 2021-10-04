@@ -18,8 +18,8 @@ var shielding: float = 0.0
 
 var flare_state:int = 0
 var flare_value: float = 0.0
-var flare_countdown: float = 60.0
-var flare_interval: float = 60.0
+var flare_countdown: float = 90.0
+var flare_interval: float = 90.0
 
 var energy: float = 0.0
 var total_energy: float = 0.0
@@ -92,7 +92,6 @@ func update_tflux():
         mod = 1.0
         osc = (sqrt(depth/670))/16
     fluct = 1.0+util.randgen.randf_range(-osc,osc)
-    fluct = 1.0 #TESTING VALUE
     tsun = clamp((fluct*depth*mod*(1.0+flare_value))+dere_decay-poison,0,20000.0)
     
 func update_yflux():
@@ -114,14 +113,13 @@ func update_yflux():
         osc = 0.02
     if not osc == 0.0:
         fluct = 1.0+util.randgen.randf_range(-osc,osc)
-    fluct = 1.0 #TESTING VALUE
     yan = clamp((fluct*depth*depth*depth*mod*(1.0+flare_value)/(350*350))-poison,0,20000.0)
 
 func update_dflux():
     var d_factor = sqrt(slots[1][0]+slots[2][0]+slots[3][0]+slots[4][0])/200
     var osc = 0.02
     var fluct = 1.0
-#    fluct = 1.0+util.randgen.randf_range(-osc,osc)
+    fluct = 1.0+util.randgen.randf_range(-osc,osc)
     dere = d_factor*(tsun+yan)*fluct
 
 func update_power():
@@ -164,13 +162,15 @@ func flare_timer(delta):
         emit_signal("flare_incoming")
     if (flare_countdown < 5 && flare_state <= 1):
         flare_state = 2
-        flare_value = 0.2
         emit_signal("flare_active")
     if (flare_countdown <0):
         flare_countdown = float(30 + randi()%60)
         flare_state = 0
-        flare_value = 0.0
         emit_signal("flare_over")
+    if flare_state == 0 && flare_value > 0.0:
+        flare_value -= 0.1*delta
+    if flare_state == 2 && flare_value < 0.2:
+        flare_value += 0.1*delta
 
 func reset_energy():
     total_energy += energy

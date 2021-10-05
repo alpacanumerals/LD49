@@ -133,4 +133,4 @@ func witch_display_summon():
 
 func set_minimum_energy():
     var n = witch_array.size()
-    min_energy = 1000*sqrt(n*n*n*n*n)
+    min_energy = 750*sqrt(n*n*n*n*n)

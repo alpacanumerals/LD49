@@ -23,7 +23,7 @@ func _ready():
     get_node("MarginContainer/VBoxContainer/HBoxContainer/ListPanel/Panel/WitchList").add_child(list_button_2)
     list_button_2.initialise(2)
     
-    magic.auto_summon_timer = 0.0
+    magic.init_values()
     if settings.tutorial == true:
         settings.tutoring()
     magic.gamestart = true

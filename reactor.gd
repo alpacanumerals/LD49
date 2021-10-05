@@ -10,6 +10,7 @@ var dere_label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+    witches.witch_array = []
     var list_button_load = load("res://witch.tscn")
     var list_button_0 = list_button_load.instance()
     get_node("MarginContainer/VBoxContainer/HBoxContainer/ListPanel/Panel/WitchList").add_child(list_button_0)
@@ -24,6 +25,7 @@ func _ready():
     list_button_2.initialise(2)
     
     magic.init_values()
+    witches.set_minimum_energy()
     if settings.tutorial == true:
         settings.tutoring()
     magic.gamestart = true

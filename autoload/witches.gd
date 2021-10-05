@@ -33,6 +33,8 @@ func loadNames():
     file.close()
 
 func prepFaces():
+    witch_faces = []
+    witch_badend_faces = []
     for i in range(30):
         var path = "res://assets_faces/w"+String(i)+".jpeg"
         witch_faces.append(path)

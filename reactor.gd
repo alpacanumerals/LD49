@@ -10,7 +10,6 @@ var dere_label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    witches.witch_array = []
     var list_button_load = load("res://witch.tscn")
     var list_button_0 = list_button_load.instance()
     get_node("MarginContainer/VBoxContainer/HBoxContainer/ListPanel/Panel/WitchList").add_child(list_button_0)

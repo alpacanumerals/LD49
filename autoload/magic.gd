@@ -52,7 +52,26 @@ var slots = []
 func _ready():
     for _i in range(13):
         slots.append(null_stats.duplicate())
-    flare_countdown = flare_interval
+    
+func init_values():
+    tsun = 0.0
+    yan = 0.0
+    dere = 0.0
+    dere_buildup = 0.0
+    dere_decay = 0.0
+
+    power = 0.0
+    shielding = 0.0
+
+    flare_state = 0
+    flare_value = 0.0
+    flare_countdown = 90.0
+    flare_interval = 90.0
+
+    energy = 0.0
+    total_energy = 0.0
+    
+    auto_summon_timer = 0.0
 
 func _physics_process(delta):
     if gamestart:
